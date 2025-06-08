@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DataFit</title>
+  <style>
+    .navbar {
+      padding: 10px;
+      background: linear-gradient(to right,#d5dbf1,#3f58bb);
+    }
+    body {
+    font-family: Arial, sans-serif;
+    }
+    .cuadro {
+    background-color: #f0f0f0;  /* Color de fondo */
+    padding: 20px;              /* Espacio interior */
+    border-radius: 15px;        /* Esquinas curvas */
+    width: 250px;               /* Ancho opcional */
+    margin: 10px auto;          /* Centrado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra opcional */
+    margin-top:5px;
+    margin-left:10px;
+    }
+
+    h1 {
+    color: #117be4; /* Cambia a cualquier color que desees */
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+      align-items: center; /* Alinea verticalmente */
+    }
+    .logo {
+    display: flex;
+    align-items: center;
+    }
+
+    .logo img {
+      width: 48px;
+      margin-top:-10px; 
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .logo span {
+      font-size: 40px;
+      font-weight: bold;
+      
+    }
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #ffffff ;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .historial {
+      margin-top: 200px; /* Aprox. 20 líneas hacia abajo (varía según fuente/tamaño) */
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+        <img src="manzana.png" alt="manzana">
+        <span>DataFit</span>
+      <nav>
+        <a href="#home">Inicio</a>
+        <a href="#">Rutinas</a>
+        <a href="#">Desafíos</a>
+        <a href="#">Progreso</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; max-width: 1000px; margin: 30px auto;">
+    
+ <!-- Columna izquierda: MI PROGRESO y MI HISTORIAL -->
+ <div>
+ <h1 style="margin: 0;">MI PROGRESO</h1>
+ <h2 style="margin-top: 80px;">Mi Historial</h2>
+</div>
+
+<!-- Columna derecha: Objetivo y Estadística -->
+<div style="display: flex; flex-direction: column; gap: 80px; margin-right: 200px;">
+<p style="margin: 0; font-size: 18px; font-weight: bold;">Objetivo</p>
+<p style="margin: 0; font-size: 16px;">Estadística</p>
+</div>
+</div>
+
+<!-- Recuadros -->
+<div style="display: flex; flex-wrap: wrap; gap: 1px; justify-content: center;">
+<div class="cuadro">
+ <p>Contenido del recuadro 1</p>
+</div>
+<div class="cuadro">
+ <p>Contenido del recuadro 2</p>
+</div>
+<div class="cuadro">
+ <p>Contenido del recuadro 3</p>
+</div>
+  </main>
+</body>
+</html> 
