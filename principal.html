@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataFit</title>
-    <link rel="stylesheet" href="principalstyle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="topbar">
@@ -16,7 +16,10 @@
         </div>
         <div class="secciones">
             <div class="seccion inicio">
-                Inicio
+                <img src="home.svg"/>
+                <div>
+                    Inicio
+                </div>
             </div>
             <div class="seccion rutinas">
                 Rutinas
@@ -35,24 +38,80 @@
             <img class="ajustes-icon" src="settings.svg" alt="Ajustes">
         </div>
     </div>
-    <div class="rutinasbox">
-        <div class="rutinas-bar">
-            <h1 class="rutinas-title">Rutinas</h1>
-            <button class="rutinas-button">Ver mis rutinas</button>
+
+    <div class="main-bar">
+        <div class="main-group">
+            <button class="back-button">
+                <img src="arrow_back.svg"/>
+            </button>
+            <h2 class="top-title">Mis desafíos</h2>
         </div>
-        <div class="rutinas-content">
-            <div class="rutina-lunes">
-
+        <div class="main-group">
+            <div class="main_challenges">
+                <img src="menu.svg" class="menu-icon"/>
+                <input type="text" placeholder="Desafíos recomendados" class="search-input"/>
+                <img src="search.svg" class="search-icon"/>
             </div>
-
-            <div class="rutina-martes">
-
+            <button class="create-challenge-button">
+                <img src="plus.svg"/>
+                <p>Crear desafío</p>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-group">
+            <h2 class="content-title">Favoritos</h2>
+            <div class="challenges-container">
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Completa 3 días</p>
+                        <div class="challenge-options">
+                            <img src="star.svg"/>
+                            <img src="edit.svg"/>
+                            <img src="trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Completa 3 días de rutinas</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Meditación profunda</p>
+                        <div class="challenge-options">
+                            <img src="star.svg" class="favorite-toggle-icon" data-favorite="true"/>
+                            <img src="edit.svg"/>
+                            <img src="trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Medita por 1 minuto</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
             </div>
-
-            <div class="rutina-creacion">
-                
+        </div>
+        <div class="content-group">
+            <h2 class="content-title">Activos</h2>
+            <div class="challenges-container-actives">
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Lectura diaria</p>
+                        <div class="challenge-options">
+                            <img src="unstar.svg" class="favorite-toggle-icon" data-favorite="false"/>
+                            <img src="edit.svg"/>
+                            <img src="trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Lee por 10 minutos</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
