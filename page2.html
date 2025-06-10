@@ -80,6 +80,7 @@
     }
     nav a {
       margin-left: 30px;
+      margin-right: 30px;
       text-decoration: none;
       color: #ffffff ;
       font-weight: 500;
@@ -198,21 +199,29 @@
   padding: 20px;
 }
 
+.Hipervinculos-Header{
+  font-size:20px
+}
+
 </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
   <header class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
     <div class="logo">
-        <img src="manzana.png" alt="manzana">
+        <img src="logo.png" alt="logo">
         <span>DataFit</span>
     </div>
     <nav>
-      <a href="#home">Inicio</a>
-      <a href="#rutinas">Rutinas</a>
-      <a href="#desafio">Desafíos</a>
-      <a href="#progreso">Progreso</a>
-      </nav>
+      <div class="Hipervinculos-header">
+        <a href="#home"><img  src="Home.png" alt="Inicio" style="margin-right: 8px;">Inicio</a>
+        <a href="#rutinas">Rutinas</a>
+        <a href="#desafio">Desafíos</a>
+        <a href="#progreso">Progreso</a>
+        <a href="#Settings"><img src="Settings.png" alt="Settings" style="margin-left: 8px;width: 40px; height: 40px;"></a>
+        <a href="#Notification"><img src="Notification.png" alt="Notification" style="margin-left: 0px;width: 40px; height: 40px;"></a>
+      </div>
+    </nav>
   </header>
   <main>
   <!-- Contenedor principal: dos columnas lado a lado -->
@@ -262,6 +271,31 @@
 
       <div class="cuadrogrande">
         <p style="font-size: 18px; font-weight: bold;">Estadística</p>
+        <div style="max-width: 550px; margin-top: 20px;">
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 80px;">Rutina 1</span>
+            <div style="background-color: #2364f3; height: 25px; width: 60%; border-radius: 5px;"></div>
+            <span>12 tareas</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 80px;">Rutina 2</span>
+            <div style="background-color: #4a90e2; height: 25px; width: 90%; border-radius: 5px;"></div>
+            <span>18 tareas</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 80px;">Rutina 3</span>
+            <div style="background-color: #2364f3; height: 25px; width: 45%; border-radius: 5px;"></div>
+            <span>9 tareas</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 80px;">Rutina 4</span>
+            <div style="background-color: #4a90e2; height: 25px; width: 75%; border-radius: 5px;"></div>
+            <span>15 tareas</span>
+          </div>
+        </div>
+      </div>
         <p style="font-size: 18px; font-weight: bold;">Comparación entre semanas</p>
 
         <!-- Gráfico de barras -->
