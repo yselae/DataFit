@@ -269,3 +269,7 @@
     margin: auto;
     margin-top: 20px;
 }
+
+.favorite-toggle-icon{
+    cursor: pointer;
+}
