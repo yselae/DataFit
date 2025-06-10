@@ -1,0 +1,198 @@
+.notificaciones {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.notificaciones .overlap-wrapper {
+  width: 1440px;
+  height: 1024px;
+}
+
+.notificaciones .overlap {
+  position: relative;
+  height: 1024px;
+}
+
+
+.notificaciones .div {
+  position: absolute;
+  width: 1440px;
+  height: 125px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    211deg,
+    rgba(45, 96, 237, 1) 0%,
+    rgba(116, 148, 235, 1) 49%,
+    rgba(190, 202, 233, 1) 100%
+  );
+}
+
+
+.notificaciones .notification {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 31px;
+  left: 1223px;
+}
+
+.notificaciones .settings {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 31px;
+  left: 1322px;
+}
+
+
+.notificaciones .ellipse {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  top: 34px;
+  left: 1263px;
+  background-color: #fd3030;
+  border-radius: 8px / 7.5px;
+}
+
+
+.notificaciones .rectangle-6 {
+  position: absolute;
+  width: 1440px;
+  height: 899px;
+  top: 125px;
+  left: 0;
+  background-color: #646464;
+  opacity: 0.5;
+}
+
+.notificaciones .notificacion {
+  position: absolute;
+  width: 619px;
+  height: 531px;
+  top: 125px;
+  left: 788px;
+}
+
+
+
+.notificaciones .vector {
+  position: absolute;
+  width: 70px;
+  height: 28px;
+  top: 0;
+  left: 431px;
+}
+
+.notificaciones .rectangle-7 {
+  position: absolute;
+  width: 619px;
+  height: 508px;
+  top: 24px;
+  left: 0;
+  background-color: #2d60ff;
+  border-radius: 50px;
+}
+
+
+
+.notificaciones .rectangle-8 {
+  position: absolute;
+  width: 539px;
+  height: 118px;
+  top: 233px;
+  left: 828px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+}
+
+.notificaciones .rectangle-9 {
+  position: absolute;
+  width: 539px;
+  height: 93px;
+  top: 370px;
+  left: 828px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+}
+
+.notificaciones .rectangle-10 {
+  position: absolute;
+  width: 539px;
+  height: 120px;
+  top: 490px;
+  left: 828px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+}
+
+.notificaciones .icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 285px;
+  left: 1332px;
+}
+
+.notificaciones .icon-2 {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 413px;
+  left: 1332px;
+}
+
+.notificaciones .icon-3 {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 545px;
+  left: 1332px;
+}
+
+.notificaciones .p {
+  position: absolute;
+  width: 422px;
+  top: 247px;
+  left: 893px;
+  font-family: "DM Sans", Helvetica;
+  font-weight: 500;
+  color: #04000e;
+  font-size: 24px;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.notificaciones .text-wrapper-24 {
+  position: absolute;
+  width: 422px;
+  top: 384px;
+  left: 893px;
+  font-family: "DM Sans", Helvetica;
+  font-weight: 500;
+  color: #04000e;
+  font-size: 24px;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.notificaciones .text-wrapper-25 {
+  position: absolute;
+  width: 422px;
+  top: 504px;
+  left: 893px;
+  font-family: "DM Sans", Helvetica;
+  font-weight: 500;
+  color: #04000e;
+  font-size: 24px;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
