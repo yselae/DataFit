@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var favoriteContainer = document.querySelector(".challenges-container");
+            var activeContainer = document.querySelector(".challenges-container-actives");
+            function updateIcon(icon, isFavorite) {
+                icon.src = isFavorite ? "/assets/star.svg" : "/assets/unstar.svg";
+                icon.dataset.favorite = isFavorite.toString();
+            }
+            function handleToggleFavorite(e) {
+                var target = e.target;
+                if (!target.classList.contains("favorite-toggle-icon"))
+                    return;
+                var icon = target;
+                var isFavorite = icon.dataset.favorite === "true";
+                var card = icon.closest(".challenge-card");
+                if (!card)
+                    return;
+                // Mover el card al contenedor opuesto
+                if (isFavorite) {
+                    // De favoritos a activos
+                    updateIcon(icon, false);
+                    activeContainer.appendChild(card);
+                }
+                else {
+                    // De activos a favoritos
+                    updateIcon(icon, true);
+                    favoriteContainer.appendChild(card);
+                }
+            }
+            document.body.addEventListener("click", handleToggleFavorite);
+        });
+    </script>
+    <div class="topbar">
+        <div class="logo-container">
+            <img class="logo" src="/assets/logo.png" alt="DataFit Logo">
+        </div>
+        <div class="title">
+            <h1>DataFit</h1>
+        </div>
+        <div class="secciones">
+            <div class="seccion inicio">
+                <img src="/assets/home.svg"/>
+                <div>
+                    Inicio
+                </div>
+            </div>
+            <div class="seccion rutinas">
+                Rutinas
+            </div>
+            <div class="seccion desafios">
+                Desafios
+            </div>
+            <div class="seccion progreso">
+                Progreso
+            </div>
+        </div>
+        <div class="campana">
+            <img class="campana-icon" src="/assets/campana.svg" alt="Campana">
+        </div>
+        <div class="ajustes">
+            <img class="ajustes-icon" src="/assets/settings.svg" alt="Ajustes">
+        </div>
+    </div>
+
+    <div class="main-bar">
+        <div class="main-group">
+            <button class="back-button">
+                <img src="/assets/arrow_back.svg"/>
+            </button>
+            <h2 class="top-title">Mis desafíos</h2>
+        </div>
+        <div class="main-group">
+            <div class="main_challenges">
+                <img src="/assets/menu.svg" class="menu-icon"/>
+                <input type="text" placeholder="Desafíos recomendados" class="search-input"/>
+                <img src="/assets/search.svg" class="search-icon"/>
+            </div>
+            <button class="create-challenge-button">
+                <img src="/assets/plus.svg"/>
+                <p>Crear desafío</p>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-group">
+            <h2 class="content-title">Favoritos</h2>
+            <div class="challenges-container">
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Completa 3 días</p>
+                        <div class="challenge-options">
+                            <img src="/assets/star.svg" class="favorite-toggle-icon" data-favorite="true"/>
+                            <img src="/assets/edit.svg"/>
+                            <img src="/assets/trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Completa 3 días de rutinas</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Meditación profunda</p>
+                        <div class="challenge-options">
+                            <img src="/assets/star.svg" class="favorite-toggle-icon" data-favorite="true"/>
+                            <img src="/assets/edit.svg"/>
+                            <img src="/assets/trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Medita por 1 minuto</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
+            </div>
+        </div>
+        <div class="content-group">
+            <h2 class="content-title">Activos</h2>
+            <div class="challenges-container-actives">
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <p class="challenge-text">Lectura diaria</p>
+                        <div class="challenge-options">
+                            <img src="/assets/unstar.svg" class="favorite-toggle-icon" data-favorite="false"/>
+                            <img src="/assets/edit.svg"/>
+                            <img src="/assets/trash.svg"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Lee por 10 minutos</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
