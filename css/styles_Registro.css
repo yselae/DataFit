@@ -43,9 +43,7 @@ ody_Registro {
   padding: 20px;
   position: relative;
 }
-
 /* Overlay para mejorar legibilidad si es necesario */
-.body_Login::before {
 .body_Registro::before {
   content: '';
   position: absolute;
