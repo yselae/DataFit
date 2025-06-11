@@ -14,68 +14,102 @@ body {
     background-color: #ffffff; 
     min-height: 100vh;
 }
+/*------------------NAVBAR COMPARTIDO---------------------*/
+/* Este bloque debe ser igual en todos tus archivos CSS para mantener la consistencia */
 
-/*------------------NAVBAR---------------------*/
-
-.main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: linear-gradient(270deg, #2D60ED 0%, #7494EB 49%, #BECAE9 100%);
-    color: #ffffff;
+.nav-bar_Home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(
+    262deg,
+    #2D60ED 0%,
+    #7494EB 49%,
+    #BECAE9 100%
+  );
+  color: #FFFFFF;
+  width: 100%;
+  height: auto;
+  min-height: 4rem;
+  position: relative;
+  z-index: 1000;
 }
 
-.main-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
+.logo_Home {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.main-header .logo-text {
-    font-size: 36px;
-    font-weight: 700;
+.logo-icon_Home {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
 }
 
-.main-header .main-nav {
-    display: flex;
-    gap: 40px;
+.logo-text_Home {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #FFFFFF; 
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.main-header .main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 300; 
-    padding: 10px;
-    border-bottom: 3px solid transparent; 
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.menu_Home {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.main-header .main-nav a.active {
-    font-weight: 700; 
-    border-bottom-color: #ffffff;
+.nav-link_Home {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: font-weight 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.main-header .main-nav a:hover {
-    opacity: 0.8;
+.nav-link_Home:hover {
+  font-weight: 700;
 }
 
-.user-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.nav-link_Home.active_Home {
+  font-weight: 700;
 }
 
-.user-actions .icon-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 28px;
-    cursor: pointer;
+.icon-nav_Home {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.actions_Home {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.actions_Home a {
+  color: #FFFFFF; /* Asegura que los links de los iconos sean blancos */
+  text-decoration: none;
+}
+
+.notification-icon_Home,
+.settings-icon_Home {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.notification-icon_Home:hover,
+.settings-icon_Home:hover {
+  transform: scale(1.1);
 }
 
 /*-------------MAIN CONTENT AREA---------------------*/
@@ -396,8 +430,6 @@ body {
 
 .btn-create:hover {
     background-color: #1e4bce;
-<<<<<<< HEAD
-=======
 }
 
 /* ======================================== */
@@ -496,5 +528,4 @@ body {
 .exercise-status img {
     width: 26px;
     height: 26px;
->>>>>>> parent of 1acf32f (Revert "Feature/rutinas")
 }

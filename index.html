@@ -9,12 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+     <style>
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/fondo.jpg');
+        }
+    </style>
 </head>
 <body class="landing-page">
 
     <header class="landing-header">
         <div class="container">
             <div class="logo">
+                <img src="assets/icons/logo.png" alt="Logo de Data Fit" class="logo-img">
                 <span class="logo-text">Data Fit</span>
             </div>
             <nav>
@@ -30,14 +36,14 @@
         <section id="hero">
             <div class="container hero-content">
                 <h1>Transforma tu Físico. Mide tu Progreso.</h1>
-                <p class="pitch">Deja de adivinar en el gimnasio. Con Data Fit, crea rutinas personalizadas, sigue tus entrenamientos y alcanza tus metas de salud con una precisión nunca antes vista. </p>
-                <a href="index_home.html" class="btn-primary btn-cta">Comienza tu transformación ahora</a>
+                <p class="pitch">Deja de adivinar en el gimnasio. Con Data Fit, crea rutinas personalizadas, sigue tus entrenamientos y alcanza tus metas de salud con una precisión nunca antes vista.</p>
+                <a href="index_home.html" class="btn-primary btn-cta">Comienza tu transformación</a>
             </div>
         </section>
 
         <section id="purpose">
             <div class="container">
-                <h2>Tu Vida Saludable, Ahora</h2>
+                <h2>Tu Gimnasio, Más Inteligente</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <i class="fas fa-calendar-check"></i>
@@ -61,10 +67,11 @@
         <section id="gallery">
             <div class="container">
                 <h2>Mira la App en Acción</h2>
-                <div class="gallery-content">
-                    <iframe width="896" height="504" src="" title="Video de demostración de Data Fit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    </div>
+                <div class="image-grid">
+                    <img src="assets/img/Mis Rutinas.png" alt="Rutinas">
+                    <img src="assets/img/desafios.jpg" alt="Desafios">
+                    <img src="assets/img/Progreso.png" alt="Progreso">
+                </div>
             </div>
         </section>
 
@@ -89,6 +96,17 @@
             <p>&copy; 2025 Data Fit. Todos los derechos reservados. Lima, Perú.</p>
         </div>
     </footer>
+
+    <script>
+        const header = document.querySelector('.landing-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>

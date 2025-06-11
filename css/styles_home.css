@@ -66,11 +66,11 @@ body {
 }
 
 .logo-text_Home {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--color-black_Home);
   line-height: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow:  0 1px 3px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.02em;
 }
 
@@ -508,7 +508,7 @@ body {
     height: 3rem;
   }
   .logo-text_Home {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
   }
   .routine-container_Home {
     gap: 1rem;
@@ -672,7 +672,7 @@ body {
 /* Optimización para pantalla del usuario (1920x1080 con escala 125%) */
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
   .logo-text_Home {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .nav-bar_Home {
     height: 5.5rem;
@@ -709,3 +709,4 @@ body {
     font-size: 2.5rem;
   }
 }
+
