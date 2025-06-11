@@ -3,164 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
-  <title>Data Fit - Inicio</title>
-
-  <!-- Google Fonts - DM Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/styles_home.css">
-</head>
-<body class="home_Home">
-
-<!-- Barra de navegación -->
-<nav class="nav-bar_Home">
-  <div class="logo_Home">
-    <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
-    <span class="logo-text_Home">Data Fit</span>
-  </div>
-
-  <ul class="menu_Home">
-    <li><a href="#" class="nav-link_Home active_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
-    <!-- window.location.href = '/rutinas' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
-    <!-- window.location.href = '/desafios' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
-    <!-- window.location.href = '/progreso' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
-  </ul>
-
-  <div class="actions_Home">
-    <!-- window.location.href = '/notificaciones' -->
-    <i class="fas fa-bell notification-icon_Home"></i>
-    <!-- window.location.href = '/configuracion' -->
-    <i class="fas fa-cog settings-icon_Home"></i>
-  </div>
-</nav>
-
-<!-- Contenido principal -->
-<main class="main-content_Home">
-
-  <!-- Sección Rutinas -->
-  <section class="routines_Home">
-    <div class="section-header_Home">
-      <h2 class="section-title_Home">RUTINAS</h2>
-      <!-- window.location.href = '/mis-rutinas' -->
-      <button class="btn-ver-mas-rutinas_Home">ver más rutinas</button>
-    </div>
-
-    <div class="routine-container_Home">
-      <!-- Rutina Lunes -->
-      <div class="routine-card_Home">
-        <img src="assets/img/fondo_lunes.png" alt="Rutina Lunes" class="routine-image_Home">
-        <div class="routine-overlay_Home">
-          <div class="routine-info_Home">
-            <h3 class="routine-day_Home">LUNES</h3>
-            <p class="routine-type_Home">Tren Superior</p>
-          </div>
-          <!-- window.location.href = '/rutina/lunes' -->
-          <button class="btn-ver-mas_Home">ver más</button>
-        </div>
-      </div>
-
-      <!-- Rutina Martes -->
-      <div class="routine-card_Home">
-        <img src="assets/img/fondo_martes.png" alt="Rutina Martes" class="routine-image_Home">
-        <div class="routine-overlay_Home">
-          <div class="routine-info_Home">
-            <h3 class="routine-day_Home">MARTES</h3>
-            <p class="routine-type_Home">Tren Inferior</p>
-          </div>
-          <!-- window.location.href = '/rutina/martes' -->
-          <button class="btn-ver-mas_Home">ver más</button>
-        </div>
-      </div>
-
-      <!-- Agregar nueva rutina -->
-      <div class="add-routine_Home">
-        <!-- window.location.href = '/agregar-rutina' -->
-        <button class="btn-add-routine_Home">
-          <i class="fas fa-plus plus-icon_Home"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contenedor de Desafíos y Progreso -->
-  <div class="bottom-sections_Home">
-
-    <!-- Sección Desafíos -->
-    <section class="challenges_Home">
-      <h2 class="section-title_Home">DESAFÍOS</h2>
-
-      <div class="challenge-list_Home">
-        <!-- window.location.href = '/desafio/completa-3-dias' -->
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Completa 3 días</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
-        </div>
-
-        <!-- window.location.href = '/desafio/meditacion-profunda' -->
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Meditación profunda</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
-        </div>
-
-        <!-- window.location.href = '/desafio/caminata-diaria' --> 
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Caminata diaria</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
-        </div>
-      </div>
-
-      <!-- window.location.href = '/todos-los-desafios' -->
-      <button class="btn-ver-mas-desafios_Home">ver más desafíos</button>
-    </section>
-
-
-    <!-- Sección Progreso -->
-    <section class="progress_Home">
-      <h2 class="section-title_Home">PROGRESO</h2>
-
-      <div class="progress-content_Home">
-        <!-- Círculo de progreso -->
-        <div class="progress-circle_Home">
-          <svg class="progress-svg_Home" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="85" class="progress-bg_Home"></circle>
-            <circle cx="100" cy="100" r="85" class="progress-bar_Home"></circle>
-          </svg>
-          <div class="progress-text_Home">
-            <span class="progress-number_Home">40</span>
-            <span class="progress-label_Home">días</span>
-            <span class="progress-objective_Home">Objetivo: 60 días</span>
-          </div>
-        </div>
-
-        <!-- Información del objetivo -->
-        <div class="progress-info_Home">
-          <div class="objective-container_Home">
-            <span class="objective-label_Home">OBJETIVO</span>
-            <p class="objective-text_Home">GANAR GRASA MUSCULAR</p>
-          </div>
-          <!-- window.location.href = '/progreso-detallado' -->
-          <button class="btn-ver-mas-progreso_Home">ver más</button>
-        </div>
-      </div>
-    </section>
-
-  </div>
-</main>
-
-</body>
-</html>
-=======
   <title>Data Fit - Iniciar Sesión</title>
   
   <!-- Google Fonts - DM Sans -->
@@ -229,7 +71,7 @@
         
         <!-- Enlace olvidar contraseña -->
         <div class="forgot-password_Login">
-          <a href="#" class="forgot-link_Login">¿Olvidó su contraseña?</a>
+          <a href="index_Restablecer.html" class="forgot-link_Login">¿Olvidó su contraseña?</a>
         </div>
       </div>
       
@@ -240,17 +82,8 @@
     <!-- Sección de registro -->
     <div class="register-section_Login">
       <span class="register-text_Login">¿No tiene cuenta? </span>
-      <a href="#" class="register-link_Login">Regístrese acá</a>
+      <a href="index_Registro.html" class="register-link_Login">Regístrese acá</a>
     </div>
-    
-    <!-- Términos y condiciones (opcional, comentado por ahora) -->
-    <!--
-    <p class="terms-text_Login">
-      Al crear una cuenta, acepta los 
-      <a href="#" class="terms-link_Login">Términos de uso</a> y la 
-      <a href="#" class="terms-link_Login">Política de privacidad</a>
-    </p>
-    -->
     
   </div>
 
@@ -259,21 +92,16 @@
     © 2025 Data Fit, Inc. - All Rights Reserved
   </footer>
 
-  <!-- JavaScript para manejo de errores -->
   <script>
     // Referencias a elementos del DOM
     const loginForm = document.getElementById('loginForm_Login');
     const emailInput = document.getElementById('email_Login');
     const passwordInput = document.getElementById('password_Login');
-    const loginContainer = document.getElementById('loginContainer_Login');
-    const successIcon = document.getElementById('successIcon_Login');
-    const successMessage = document.getElementById('successMessage_Login');
 
     // Estados de error posibles
     const ERROR_STATES = {
       EMPTY_FIELDS: 'empty_fields',
-      INVALID_CREDENTIALS: 'invalid_credentials',
-      EMAIL_IN_USE: 'email_in_use'
+      INVALID_CREDENTIALS: 'invalid_credentials'
     };
 
     // Placeholders originales
@@ -284,52 +112,18 @@
 
     // Mensajes de error
     const ERROR_MESSAGES = {
-      email: {
-        empty: 'Email obligatorio',
-        invalid: 'Email incorrecto',
-        in_use: 'El email ya está en uso'
-      },
-      password: {
-        empty: 'Contraseña obligatoria',
-        invalid: 'Contraseña incorrecta'
-      }
+      email: 'Email obligatorio',
+      password: 'Contraseña obligatoria'
     };
 
-    // Función para limpiar estados de error
+    // Función para limpiar estados previos
     function clearErrorStates() {
       emailInput.classList.remove('error_Login');
       passwordInput.classList.remove('error_Login');
-      
       emailInput.placeholder = ORIGINAL_PLACEHOLDERS.email;
       passwordInput.placeholder = ORIGINAL_PLACEHOLDERS.password;
-      
-      // Limpiar también estados de éxito
-      clearSuccessState();
-    }
-
-    // Función para limpiar estado de éxito
-    function clearSuccessState() {
-      loginContainer.classList.remove('success_Login');
-      successIcon.classList.remove('show_Login');
-      successMessage.classList.remove('show_Login');
-    }
-
-    // Función para mostrar estado de éxito
-    function showSuccessState() {
-      clearErrorStates();
-      loginContainer.classList.add('success_Login');
-      successIcon.classList.add('show_Login');
-      successMessage.classList.add('show_Login');
-      
-      // Limpiar formulario
       emailInput.value = '';
       passwordInput.value = '';
-      
-      // Opcional: redirigir después de un tiempo
-      setTimeout(() => {
-        console.log('🎉 Redirigiendo al dashboard...');
-        // window.location.href = '/dashboard'; // Descomenta para redirigir
-      }, 2000);
     }
 
     // Función para mostrar error en un campo
@@ -337,70 +131,43 @@
       const input = field === 'email' ? emailInput : passwordInput;
       input.classList.add('error_Login');
       input.value = '';
-      input.placeholder = ERROR_MESSAGES[field][errorType];
+      input.placeholder = ERROR_MESSAGES[field];
     }
 
-    // Función para simular login (errores y éxito)
+    // Simular login
     function simulateLogin() {
       const emailValue = emailInput.value.trim();
       const passwordValue = passwordInput.value.trim();
-      
-      // Simular diferentes escenarios
-      // Puedes modificar esta lógica según tus necesidades
-      
+
       if (!emailValue && !passwordValue) {
-        // Campos vacíos
         showFieldError('email', 'empty');
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (!emailValue) {
-        // Solo email vacío
         showFieldError('email', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (!passwordValue) {
-        // Solo contraseña vacía
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
-        // Credenciales correctas (ejemplo específico)
-        showSuccessState();
+        console.log('✅ Login exitoso!');
+        window.location.href = "index_home.html";
         return 'SUCCESS';
-      } else if (emailValue === 'usuario@existe.com') {
-        // Email ya en uso (ejemplo específico)
-        showFieldError('email', 'in_use');
-        return ERROR_STATES.EMAIL_IN_USE;
       } else {
-        // Credenciales incorrectas (comportamiento por defecto)
         showFieldError('email', 'invalid');
         showFieldError('password', 'invalid');
         return ERROR_STATES.INVALID_CREDENTIALS;
       }
     }
 
-    // Manejador del envío del formulario
+    // Manejador de submit
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Limpiar estados previos
       clearErrorStates();
-      
-      // Simular validación/autenticación
-      const result = simulateLogin();
-      
-      // Logging para desarrollo
-      console.log('Resultado del login:', result);
-      
-      if (result === 'SUCCESS') {
-        console.log('✅ Login exitoso!');
-      } else {
-        console.log('❌ Error en login:', result);
-      }
-      
-      // En una implementación real, aquí harías la llamada al servidor
-      // y manejarías la respuesta correspondiente
+      simulateLogin();
     });
 
-    // Limpiar errores cuando el usuario comience a escribir
+    // Limpiar errores al escribir
     emailInput.addEventListener('input', function() {
       if (this.classList.contains('error_Login')) {
         this.classList.remove('error_Login');
@@ -414,43 +181,9 @@
         this.placeholder = ORIGINAL_PLACEHOLDERS.password;
       }
     });
-
-    // Función para probar diferentes estados (para testing)
-    function testState(stateType) {
-      clearErrorStates();
-      
-      switch(stateType) {
-        case 'empty':
-          showFieldError('email', 'empty');
-          showFieldError('password', 'empty');
-          break;
-        case 'invalid':
-          showFieldError('email', 'invalid');
-          showFieldError('password', 'invalid');
-          break;
-        case 'email_in_use':
-          showFieldError('email', 'in_use');
-          break;
-        case 'success':
-          showSuccessState();
-          break;
-      }
-    }
-
-    // Hacer las funciones de testing disponibles globalmente para desarrollo
-    window.testState_Login = testState;
-    window.clearStates_Login = clearErrorStates;
-
-    console.log('🔐 Login form initialized');
-    console.log('💡 Credenciales de prueba exitosa: admin@datafit.com / 123456');
-    console.log('💡 Para probar estados:');
-    console.log('   - testState_Login("empty") - Campos obligatorios');
-    console.log('   - testState_Login("invalid") - Credenciales incorrectas');  
-    console.log('   - testState_Login("email_in_use") - Email ya existe');
-    console.log('   - testState_Login("success") - Login exitoso');
-    console.log('   - clearStates_Login() - Limpiar estados');
   </script>
 
 </body>
 </html>
->>>>>>> Stashed changes
+
+

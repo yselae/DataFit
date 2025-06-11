@@ -365,35 +365,6 @@
       }
     }
 
-    /* ÍCONO DE APROBACIÓN */
-    .success-icon_Login {
-      display: none;
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      background: url('assets/img/aprobado_login.png') center center / contain no-repeat;
-      animation: successPulse_Login 0.6s ease-out;
-    }
-
-    .success-icon_Login.show_Login {
-      display: block;
-    }
-
-    @keyframes successPulse_Login {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
     /* ESTADOS DE ÉXITO */
     .login-container_Login.success_Login {
       border: 2px solid #00D100;
@@ -456,18 +427,27 @@
 
   <!-- Controles de demostración -->
   <div class="demo-controls">
-    <div class="demo-title">🎮 DEMO - Probar Estados</div>
+    <div class="demo-title">🎮 DEMO - Probar Estados Login</div>
     <button class="demo-button" onclick="clearStates()">✅ Estado Normal</button>
     <button class="demo-button" onclick="testState('empty')">❌ Campos Obligatorios</button>
     <button class="demo-button" onclick="testState('invalid')">❌ Credenciales Incorrectas</button>
-    <button class="demo-button" onclick="testState('email_in_use')">❌ Email Ya Existe</button>
-    <button class="demo-button" onclick="testState('success')">🎉 Login Exitoso</button>
+    
+    <div style="border-top: 1px solid #ddd; margin: 12px 0; padding-top: 12px;">
+      <div style="font-weight: 600; margin-bottom: 8px; font-size: 14px;">📄 Navegar a:</div>
+      <button class="demo-button" onclick="window.location.href='index_Registro.html'" style="background: #e8f5e8;">
+        🔗 Ir a Registro
+      </button>
+      <button class="demo-button" onclick="window.location.href='index_Restablecer.html'" style="background: #e8f5e8;">
+        🔗 Ir a Restablecer
+      </button>
+    </div>
+
     <div class="demo-note">
-      <strong>Instrucciones:</strong><br>
-      • Haz click en los botones para ver diferentes estados<br>
-      • Prueba escribir en los campos para ver la auto-limpieza<br>
+      <strong>Instrucciones Login:</strong><br>
+      • Estados disponibles: campos obligatorios y credenciales incorrectas<br>
       • Credenciales exitosas: <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f796939a9e99b793968396919e83d994989a">[email&#160;protected]</a> / 123456</code><br>
-      • Haz click en "Entrar" para simular validación
+      • Los enlaces te llevan a registro y restablecer contraseña <br>
+      • Login exitoso muestra alerta simple
     </div>
   </div>
 
@@ -481,14 +461,6 @@
 
   <!-- Contenedor principal del login -->
   <div class="login-container_Login" id="loginContainer_Login">
-    
-    <!-- Ícono de éxito (oculto por defecto) -->
-    <div class="success-icon_Login" id="successIcon_Login"></div>
-    
-    <!-- Mensaje de éxito (oculto por defecto) -->
-    <div class="success-message_Login" id="successMessage_Login">
-      ¡Inicio de sesión exitoso!
-    </div>
     
     <!-- Títulos -->
     <h1 class="welcome-title_Login">TE DAMOS LA BIENVENIDA</h1>
@@ -551,9 +523,6 @@
     const loginForm = document.getElementById('loginForm_Login');
     const emailInput = document.getElementById('email_Login');
     const passwordInput = document.getElementById('password_Login');
-    const loginContainer = document.getElementById('loginContainer_Login');
-    const successIcon = document.getElementById('successIcon_Login');
-    const successMessage = document.getElementById('successMessage_Login');
 
     // Estados de error posibles
     const ERROR_STATES = {
@@ -573,7 +542,6 @@
       email: {
         empty: 'Email obligatorio',
         invalid: 'Email incorrecto',
-        in_use: 'El email ya está en uso'
       },
       password: {
         empty: 'Contraseña obligatoria',
@@ -589,28 +557,6 @@
       emailInput.placeholder = ORIGINAL_PLACEHOLDERS.email;
       passwordInput.placeholder = ORIGINAL_PLACEHOLDERS.password;
       
-      emailInput.value = '';
-      passwordInput.value = '';
-      
-      // Limpiar también estados de éxito
-      clearSuccessState();
-    }
-
-    // Función para limpiar estado de éxito
-    function clearSuccessState() {
-      loginContainer.classList.remove('success_Login');
-      successIcon.classList.remove('show_Login');
-      successMessage.classList.remove('show_Login');
-    }
-
-    // Función para mostrar estado de éxito
-    function showSuccessState() {
-      clearStates();
-      loginContainer.classList.add('success_Login');
-      successIcon.classList.add('show_Login');
-      successMessage.classList.add('show_Login');
-      
-      // Limpiar formulario
       emailInput.value = '';
       passwordInput.value = '';
     }
@@ -636,16 +582,10 @@
           showFieldError('email', 'invalid');
           showFieldError('password', 'invalid');
           break;
-        case 'email_in_use':
-          showFieldError('email', 'in_use');
-          break;
-        case 'success':
-          showSuccessState();
-          break;
       }
     }
 
-    // Función para simular login (errores y éxito)
+    // Función para simular login (errores)
     function simulateLogin() {
       const emailValue = emailInput.value.trim();
       const passwordValue = passwordInput.value.trim();
@@ -661,13 +601,11 @@
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
-        // Credenciales correctas
-        showSuccessState();
+        // Credenciales correctas - mostrar alerta
+        alert('¡Inicio de sesión exitoso!');
+        clearStates();
         return 'SUCCESS';
-      } else if (emailValue === 'usuario@existe.com') {
-        showFieldError('email', 'in_use');
-        return ERROR_STATES.EMAIL_IN_USE;
-      } else {
+      } {
         showFieldError('email', 'invalid');
         showFieldError('password', 'invalid');
         return ERROR_STATES.INVALID_CREDENTIALS;

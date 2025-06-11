@@ -16,6 +16,7 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/styles_Registro.css">
 </head>
+
 <body class="body_Registro">
   <!-- Header con logo -->
   <header class="header_Registro">
@@ -91,10 +92,12 @@
     </div>
     
   </div>
+
   <!-- Copyright -->
   <footer class="copyright_Registro">
     © 2025 Data Fit, Inc. - All Rights Reserved
   </footer>
+
   <!-- JavaScript para manejo de errores -->
   <script>
     // Referencias a elementos del DOM
@@ -107,12 +110,14 @@
       EMPTY_FIELDS: 'empty_fields',
       EMAIL_IN_USE: 'email_in_use'
     };
+
     // Placeholders originales
     const ORIGINAL_PLACEHOLDERS = {
       nombre: 'Ingrese su nombre',
       email: 'Ingrese su email',
       password: 'Ingrese su contraseña'
     };
+
     // Mensajes de error
     const ERROR_MESSAGES = {
       nombre: {
@@ -126,6 +131,7 @@
         empty: 'Contraseña obligatoria'
       }
     };
+
     // Función para limpiar estados de error
     function clearErrorStates() {
       nombreInput.classList.remove('error_Registro');
@@ -136,6 +142,7 @@
       emailInput.placeholder = ORIGINAL_PLACEHOLDERS.email;
       passwordInput.placeholder = ORIGINAL_PLACEHOLDERS.password;
     }
+
     // Función para mostrar error en un campo
     function showFieldError(field, errorType) {
       let input;
@@ -155,6 +162,7 @@
       input.value = '';
       input.placeholder = ERROR_MESSAGES[field][errorType];
     }
+
     // Función para simular registro
     function simulateRegistro() {
       const nombreValue = nombreInput.value.trim();
@@ -167,22 +175,26 @@
         showFieldError('email', 'empty');
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
+
       } else if (!nombreValue || !emailValue || !passwordValue) {
         // Algunos campos vacíos
         if (!nombreValue) showFieldError('nombre', 'empty');
         if (!emailValue) showFieldError('email', 'empty');
         if (!passwordValue) showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
+
       } else if (emailValue === 'usuario@existe.com') {
         // Email ya existe
         showFieldError('email', 'in_use');
         return ERROR_STATES.EMAIL_IN_USE;
+
       } else {
         // Registro exitoso - redirigir a confirmación
         window.location.href = 'index_Registro_Confirmacion.html';
         return 'SUCCESS';
       }
     }
+
     // Manejador del envío del formulario
     registroForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -202,6 +214,7 @@
         console.log('❌ Error en registro:', result);
       }
     });
+
     // Limpiar errores cuando el usuario comience a escribir
     nombreInput.addEventListener('input', function() {
       if (this.classList.contains('error_Registro')) {
@@ -221,30 +234,6 @@
         this.placeholder = ORIGINAL_PLACEHOLDERS.password;
       }
     });
-    // Función para probar diferentes estados (para testing)
-    function testErrorState(errorType) {
-      clearErrorStates();
-      
-      switch(errorType) {
-        case 'empty':
-          showFieldError('nombre', 'empty');
-          showFieldError('email', 'empty');
-          showFieldError('password', 'empty');
-          break;
-        case 'email_in_use':
-          showFieldError('email', 'in_use');
-          break;
-      }
-    }
-    // Hacer las funciones de testing disponibles globalmente para desarrollo
-    window.testErrorState_Registro = testErrorState;
-    window.clearErrorStates_Registro = clearErrorStates;
-    console.log('📝 Registro form initialized');
-    console.log('💡 Email de prueba existente: usuario@existe.com');
-    console.log('💡 Para probar estados:');
-    console.log('   - testErrorState_Registro("empty") - Campos obligatorios');
-    console.log('   - testErrorState_Registro("email_in_use") - Email ya existe');
-    console.log('   - clearErrorStates_Registro() - Limpiar estados');
   </script>
 </body>
 </html>
