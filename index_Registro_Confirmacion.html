@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Fit - Registro Completado</title>
+  
+  <!-- Google Fonts - DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles_Registro.css">
+</head>
+<body class="body_Registro">
+  <!-- Header con logo -->
+  <header class="header_Registro">
+    <div class="logo-container_Registro">
+      <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Registro">
+      <span class="logo-text_Registro">Data Fit</span>
+    </div>
+  </header>
+  <!-- Contenedor de confirmación -->
+  <div class="confirmation-container_Registro">
+    
+    <!-- Títulos -->
+    <h1 class="confirmation-title_Registro">REGISTRO COMPLETADO</h1>
+    <p class="confirmation-subtitle_Registro">Continúe para iniciar sesión</p>
+    
+    <!-- Ícono de éxito -->
+    <div class="success-icon_Registro"></div>
+    
+    <!-- Botón Continuar -->
+    <button class="continue-button_Registro" onclick="window.location.href='index_Login.html'">
+      Continuar
+    </button>
+    
+  </div>
+  <!-- Copyright -->
+  <footer class="copyright_Registro">
+    © 2025 Data Fit, Inc. - All Rights Reserved
+  </footer>
+  <script>
+    console.log('✅ Página de confirmación de registro cargada');
+    
+    // Auto-redirigir después de 5 segundos (opcional)
+    setTimeout(() => {
+      console.log('🔄 Redirigiendo automáticamente a login...');
+      // window.location.href = 'index_Login.html'; // Descomenta para auto-redirigir
+    }, 5000);
+  </script>
+</body>
+</html>
