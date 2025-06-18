@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <link rel="stylesheet" href="css\confi_g.css" />
-    <link rel="stylesheet" href="css\confi_style.css" />
+    <link rel="stylesheet" href="css/confi_g.css" />
+    <link rel="stylesheet" href="css/confi_style.css" />
   </head>
   <body>
     <div class="configuracin">
       <div class="overlap-wrapper">
         <div class="overlap">
-          
+
           <div class="div"></div>
-          
-          
+
           <img class="settings" src="settings-1.png" />
-        
           <div class="rectangle-6"></div>
+
           <div class="notificacion">
             <div class="overlap-2">
               <img class="vector" src="flecha.svg" />
               <div class="rectangle-7"></div>
             </div>
           </div>
+
           <div class="text-wrapper-23">Configuración</div>
           <div class="rectangle-8"></div>
           <div class="rectangle-9"></div>
@@ -30,12 +29,23 @@
           <div class="text-wrapper-26">Incluir frases motivacionales</div>
           <div class="text-wrapper-27">Incluir emojis</div>
           <img class="notification-2" src="notification-2.png" />
-          <div class="overlap-group-wrapper">
+
+          <!-- SWITCH para activar/desactivar notificaciones -->
+          <div class="switch-wrapper">
+            <label class="switch">
+              <input type="checkbox" id="notiToggle" checked />
+              <span class="slider round"></span>
+            </label>
+            <span class="label-switch">Activar notificaciones</span>
+          </div>
+
+          <!-- CHECKS -->
+          <<div class="overlap-group-wrapper" onclick="toggleCheck(this)">
             <div class="overlap-3">
-              
               <img class="check-small" src="check.svg" />
             </div>
           </div>
+
           <div class="group-2">
             <div class="overlap-3">
               <div class="container"></div>
@@ -48,13 +58,32 @@
               <img class="check-small" src="check.svg" />
             </div>
           </div>
-          <div class="btn-get-started-4"><div class="text-wrapper-7">Guardar preferencias</div></div>
+
+          <div class="btn-get-started-4">
+            <div class="text-wrapper-7">Guardar preferencias</div>
+          </div>
+
           <div class="text-wrapper-28">Salir de la cuenta</div>
           <img class="enter" src="salir.png" />
-          <div class="btn-get-started-5"><div class="text-wrapper-29">Cerrar sesión</div></div>
-          
+          <div class="btn-get-started-5">
+            <div class="text-wrapper-29">Cerrar sesión</div>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <!-- SCRIPT para funcionalidad del switch -->
+    <script>
+      document.getElementById("notiToggle").addEventListener("change", function () {
+        const isChecked = this.checked;
+        const checkElements = document.querySelectorAll(
+          ".overlap-group-wrapper, .group-2, .group-3"
+        );
+        checkElements.forEach(el => {
+          el.style.display = isChecked ? "block" : "none";
+        });
+      });
+    </script>
   </body>
 </html>
