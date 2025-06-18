@@ -36,7 +36,18 @@
                     favoriteContainer.appendChild(card);
                 }
             }
+            function handleDelete(e){
+                var target = e.target;
+                if (!target.classList.contains("delete-icon"))
+                    return;
+                var card = target.closest(".challenge-card");
+                if (!card)
+                    return;
+                // Eliminar el card del DOM
+                card.remove();
+            }
             document.body.addEventListener("click", handleToggleFavorite);
+            document.body.addEventListener("click", handleDelete);
         });
     </script>
     <div class="topbar">
@@ -100,7 +111,7 @@
                         <div class="challenge-options">
                             <img src="/assets/star.svg" class="favorite-toggle-icon" data-favorite="true"/>
                             <img src="/assets/edit.svg"/>
-                            <img src="/assets/trash.svg"/>
+                            <img src="/assets/trash.svg" class="delete-icon"/>
                         </div>
                     </div>
                     <div class="challenge-body">
@@ -114,7 +125,7 @@
                         <div class="challenge-options">
                             <img src="/assets/star.svg" class="favorite-toggle-icon" data-favorite="true"/>
                             <img src="/assets/edit.svg"/>
-                            <img src="/assets/trash.svg"/>
+                            <img src="/assets/trash.svg" class="delete-icon"/>
                         </div>
                     </div>
                     <div class="challenge-body">
@@ -133,7 +144,7 @@
                         <div class="challenge-options">
                             <img src="/assets/unstar.svg" class="favorite-toggle-icon" data-favorite="false"/>
                             <img src="/assets/edit.svg"/>
-                            <img src="/assets/trash.svg"/>
+                            <img src="/assets/trash.svg" class="delete-icon"/>
                         </div>
                     </div>
                     <div class="challenge-body">

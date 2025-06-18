@@ -273,3 +273,7 @@
 .favorite-toggle-icon{
     cursor: pointer;
 }
+
+.delete-icon{
+    cursor: pointer;
+}
