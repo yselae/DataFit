@@ -1,4 +1,6 @@
-/* --- General Styles & Resets --- */
+
+/* ===         ESTILOS COMPARTIDOS         === */
+/* Reset básico y fuente */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,12 +9,8 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    color: #333; /* Darker text for better readability */
-    background-color: #ffffff;
-}
-
-main {
-    padding: 2rem;
+    color: #333;
+    background-color: #F4F4F4; 
 }
 
 h1, h2 {
@@ -28,57 +26,103 @@ h2 {
     font-size: 1.25rem;
 }
 
-/* --- Header & Navigation --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-    background: linear-gradient(to right, #b5cafb, #2364f3);
-    color: #ffffff;
+/*------------------NAVBAR COMPARTIDO---------------------*/
+.nav-bar_Home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(
+    262deg,
+    #2D60ED 0%,
+    #7494EB 49%,
+    #BECAE9 100%
+  );
+  color: #FFFFFF;
+  width: 100%;
+  height: auto;
+  min-height: 4rem;
+  position: relative;
+  z-index: 1000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.logo_Home {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.logo img {
-    width: 48px;
-    vertical-align: middle;
+.logo-icon_Home {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
 }
 
-.logo span {
-    font-size: 40px;
-    font-weight: bold;
+.logo-text_Home {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #FFFFFF; 
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.main-nav ul.navbar-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 40px;
+.menu_Home {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 20px;
-    transition: text-decoration 0.2s;
+.nav-link_Home {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: font-weight 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-links a:hover {
-    text-decoration: underline;
+.nav-link_Home:hover,
+.nav-link_Home.active_Home {
+  font-weight: 700;
 }
 
-.navbar-links .icon-link {
-    width: 40px;
-    height: 40px;
+.icon-nav_Home {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.actions_Home {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.actions_Home a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.notification-icon_Home,
+.settings-icon_Home {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.notification-icon_Home:hover,
+.settings-icon_Home:hover {
+  transform: scale(1.1);
+}
+
+/* === ESTILOS ESPECÍFICOS PARA PROGRESO   === */
+
+main {
+    padding: 2rem;
 }
 
 /* --- Main Layout --- */
@@ -177,12 +221,11 @@ h2 {
 .progress-ring {
     --size: 150px;
     --thickness: 15px;
-    /* --progress is set inline via style attribute */
     position: relative;
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background: conic-gradient(#0d54f0 var(--progress), #e0e0e0 0deg);
+    background: conic-gradient(#0d54f0 var(--progress, 0%), #e0e0e0 0deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,7 +301,7 @@ h2 {
     display: flex;
     gap: 4px;
     align-items: flex-end;
-    height: 150px; /* Max height for the chart area */
+    height: 150px; 
 }
 
 .barra {

@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva Rutina</title>
-    <link rel="stylesheet" href="CSS/rutinas-styles.css">
+    <link rel="stylesheet" href="css/rutinas-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<<<<<<< HEAD
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-=======
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
->>>>>>> parent of 1acf32f (Revert "Feature/rutinas")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <div class="app-container">
 
-        <header class="main-header">
-            <div class="logo">
-                <span class="logo-text">Data Fit</span>
-            </div>
-            <nav class="main-nav">
-                <a href="#">INICIO</a>
-                <a href="rutinas.html" class="active">RUTINAS</a>
-                <a href="#">DESAFÍOS</a>
-                <a href="#">PROGRESO</a>
-            </nav>
-            <div class="user-actions">
-                <button class="icon-btn"><img src="assets/icons/Notification.png" alt="Notifications"></button>
-                <button class="icon-btn"><img src="assets/icons/Settings.png" alt="Settings"></button>
-            </div>
-        </header>
+<nav class="nav-bar_Home">
+    <div class="logo_Home">
+        <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
+        <span class="logo-text_Home">Data Fit</span>
+    </div>
 
+    <ul class="menu_Home">
+        <li><a href="index_home.html" class="nav-link_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
+        <li><a href="rutinas.html" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
+        <li><a href="desafios.html" class="nav-link_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
+        <li><a href="progreso.html" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
+    </ul>
+
+    <div class="actions_Home">
+        <a href="notificaciones.html" title="Notificaciones"><i class="fas fa-bell notification-icon_Home"></i></a>
+        <a href="configuracion.html" title="Configuración"><i class="fas fa-cog settings-icon_Home"></i></a>
+    </div>
+</nav>
+        
         <main class="form-content">
             
             <div class="section-header">
@@ -99,15 +99,6 @@
                     </div>
                 </div>
                 
-<<<<<<< HEAD
-                <div class="form-footer">
-                    <div class="name-input-group">
-                        <label for="routine-name" class="form-label">Nombre:</label>
-                        <input type="text" id="routine-name" class="name-input">
-                    </div>
-                    <button type="submit" class="btn-create">CREAR</button>
-                </div>
-=======
                <div class="form-footer">
                 <div class="name-input-group">
                     <label for="routine-name" class="form-label">Nombre:</label>
@@ -117,7 +108,6 @@
                     <button type="button" class="btn-create">CREAR</button>
                 </a>
             </div>
->>>>>>> parent of 1acf32f (Revert "Feature/rutinas")
 
             </form>
         </main>

@@ -1,160 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Fit - Inicio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fit - Inicio</title>
 
-  <!-- Google Fonts - DM Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/styles_home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles_home.css">
 </head>
 <body class="home_Home">
 
-<!-- Barra de navegación -->
 <nav class="nav-bar_Home">
-  <div class="logo_Home">
-    <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
-    <span class="logo-text_Home">Data Fit</span>
-  </div>
+    <div class="logo_Home">
+        <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
+        <span class="logo-text_Home">Data Fit</span>
+    </div>
 
-  <ul class="menu_Home">
-    <li><a href="#" class="nav-link_Home active_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
-    <!-- window.location.href = '/rutinas' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
-    <!-- window.location.href = '/desafios' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
-    <!-- window.location.href = '/progreso' -->
-    <li><a href="#" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
-  </ul>
+    <ul class="menu_Home">
+        <li><a href="index_home.html" class="nav-link_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
+        <li><a href="rutinas.html" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
+        <li><a href="desafios.html" class="nav-link_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
+        <li><a href="progreso.html" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
+    </ul>
 
-  <div class="actions_Home">
-    <!-- window.location.href = '/notificaciones' -->
-    <i class="fas fa-bell notification-icon_Home"></i>
-    <!-- window.location.href = '/configuracion' -->
-    <i class="fas fa-cog settings-icon_Home"></i>
-  </div>
+    <div class="actions_Home">
+        <a href="notificaciones.html" title="Notificaciones"><i class="fas fa-bell notification-icon_Home"></i></a>
+        <a href="configuracion.html" title="Configuración"><i class="fas fa-cog settings-icon_Home"></i></a>
+    </div>
 </nav>
 
-<!-- Contenido principal -->
 <main class="main-content_Home">
 
-  <!-- Sección Rutinas -->
-  <section class="routines_Home">
-    <div class="section-header_Home">
-      <h2 class="section-title_Home">RUTINAS</h2>
-      <!-- window.location.href = '/mis-rutinas' -->
-      <button class="btn-ver-mas-rutinas_Home">ver más rutinas</button>
-    </div>
-
-    <div class="routine-container_Home">
-      <!-- Rutina Lunes -->
-      <div class="routine-card_Home">
-        <img src="assets/img/fondo_lunes.png" alt="Rutina Lunes" class="routine-image_Home">
-        <div class="routine-overlay_Home">
-          <div class="routine-info_Home">
-            <h3 class="routine-day_Home">LUNES</h3>
-            <p class="routine-type_Home">Tren Superior</p>
-          </div>
-          <!-- window.location.href = '/rutina/lunes' -->
-          <button class="btn-ver-mas_Home">ver más</button>
-        </div>
-      </div>
-
-      <!-- Rutina Martes -->
-      <div class="routine-card_Home">
-        <img src="assets/img/fondo_martes.png" alt="Rutina Martes" class="routine-image_Home">
-        <div class="routine-overlay_Home">
-          <div class="routine-info_Home">
-            <h3 class="routine-day_Home">MARTES</h3>
-            <p class="routine-type_Home">Tren Inferior</p>
-          </div>
-          <!-- window.location.href = '/rutina/martes' -->
-          <button class="btn-ver-mas_Home">ver más</button>
-        </div>
-      </div>
-
-      <!-- Agregar nueva rutina -->
-      <div class="add-routine_Home">
-        <!-- window.location.href = '/agregar-rutina' -->
-        <button class="btn-add-routine_Home">
-          <i class="fas fa-plus plus-icon_Home"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contenedor de Desafíos y Progreso -->
-  <div class="bottom-sections_Home">
-
-    <!-- Sección Desafíos -->
-    <section class="challenges_Home">
-      <h2 class="section-title_Home">DESAFÍOS</h2>
-
-      <div class="challenge-list_Home">
-        <!-- window.location.href = '/desafio/completa-3-dias' -->
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Completa 3 días</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
+    <section class="routines_Home">
+        <div class="section-header_Home">
+            <h2 class="section-title_Home">RUTINAS</h2>
+            <a href="rutinas.html"><button class="btn-ver-mas-rutinas_Home">ver más rutinas</button></a>
         </div>
 
-        <!-- window.location.href = '/desafio/meditacion-profunda' -->
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Meditación profunda</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
-        </div>
+        <div class="routine-container_Home">
+            <div class="routine-card_Home">
+                <img src="assets/img/fondo_lunes.png" alt="Rutina Lunes" class="routine-image_Home">
+                <div class="routine-overlay_Home">
+                    <div class="routine-info_Home">
+                        <h3 class="routine-day_Home">LUNES</h3>
+                        <p class="routine-type_Home">Tren Superior</p>
+                    </div>
+                    <a href="detalle-rutina.html"><button class="btn-ver-mas_Home">ver más</button></a>
+                </div>
+            </div>
 
-        <!-- window.location.href = '/desafio/caminata-diaria' --> 
-        <div class="challenge-item_Home">
-          <span class="challenge-text_Home">Caminata diaria</span>
-          <i class="fas fa-arrow-right challenge-arrow_Home"></i>
-        </div>
-      </div>
+            <div class="routine-card_Home">
+                <img src="assets/img/fondo_martes.png" alt="Rutina Martes" class="routine-image_Home">
+                <div class="routine-overlay_Home">
+                    <div class="routine-info_Home">
+                        <h3 class="routine-day_Home">MARTES</h3>
+                        <p class="routine-type_Home">Tren Inferior</p>
+                    </div>
+                    <a href="detalle-rutina.html"><button class="btn-ver-mas_Home">ver más</button></a>
+                </div>
+            </div>
 
-      <!-- window.location.href = '/todos-los-desafios' -->
-      <button class="btn-ver-mas-desafios_Home">ver más desafíos</button>
+            <div class="add-routine_Home">
+                <a href="nueva-rutina.html">
+                    <button class="btn-add-routine_Home">
+                        <i class="fas fa-plus plus-icon_Home"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
     </section>
 
+    <div class="bottom-sections_Home">
 
-    <!-- Sección Progreso -->
-    <section class="progress_Home">
-      <h2 class="section-title_Home">PROGRESO</h2>
+        <section class="challenges_Home">
+            <h2 class="section-title_Home">DESAFÍOS</h2>
 
-      <div class="progress-content_Home">
-        <!-- Círculo de progreso -->
-        <div class="progress-circle_Home">
-          <svg class="progress-svg_Home" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="85" class="progress-bg_Home"></circle>
-            <circle cx="100" cy="100" r="85" class="progress-bar_Home"></circle>
-          </svg>
-          <div class="progress-text_Home">
-            <span class="progress-number_Home">40</span>
-            <span class="progress-label_Home">días</span>
-            <span class="progress-objective_Home">Objetivo: 60 días</span>
-          </div>
-        </div>
+            <div class="challenge-list_Home">
+                <a href="desafios.html" class="challenge-item_Home">
+                    <span class="challenge-text_Home">Completa 3 días</span>
+                    <i class="fas fa-arrow-right challenge-arrow_Home"></i>
+                </a>
 
-        <!-- Información del objetivo -->
-        <div class="progress-info_Home">
-          <div class="objective-container_Home">
-            <span class="objective-label_Home">OBJETIVO</span>
-            <p class="objective-text_Home">GANAR GRASA MUSCULAR</p>
-          </div>
-          <!-- window.location.href = '/progreso-detallado' -->
-          <button class="btn-ver-mas-progreso_Home">ver más</button>
-        </div>
-      </div>
-    </section>
+                <a href="desafios.html" class="challenge-item_Home">
+                    <span class="challenge-text_Home">Meditación profunda</span>
+                    <i class="fas fa-arrow-right challenge-arrow_Home"></i>
+                </a>
 
-  </div>
+                <a href="desafios.html" class="challenge-item_Home">
+                    <span class="challenge-text_Home">Caminata diaria</span>
+                    <i class="fas fa-arrow-right challenge-arrow_Home"></i>
+                </a>
+            </div>
+
+            <a href="desafios.html"><button class="btn-ver-mas-desafios_Home">ver más desafíos</button></a>
+        </section>
+
+
+        <section class="progress_Home">
+            <h2 class="section-title_Home">PROGRESO</h2>
+
+            <div class="progress-content_Home">
+                <div class="progress-circle_Home">
+                    <svg class="progress-svg_Home" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="85" class="progress-bg_Home"></circle>
+                        <circle cx="100" cy="100" r="85" class="progress-bar_Home"></circle>
+                    </svg>
+                    <div class="progress-text_Home">
+                        <span class="progress-number_Home">40</span>
+                        <span class="progress-label_Home">días</span>
+                        <span class="progress-objective_Home">Objetivo: 60 días</span>
+                    </div>
+                </div>
+
+                <div class="progress-info_Home">
+                    <div class="objective-container_Home">
+                        <span class="objective-label_Home">OBJETIVO</span>
+                        <p class="objective-text_Home">GANAR MASA MUSCULAR</p>
+                    </div>
+                    <a href="progreso.html"><button class="btn-ver-mas-progreso_Home">ver más</button></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 </main>
 
 </body>

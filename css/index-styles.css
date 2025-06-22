@@ -1,8 +1,15 @@
-/* Estilo base para la landing page */
-.landing-page {
+/* ======================================== */
+/* ESTILOS PARA LANDING PAGE (index.html)   */
+/* ======================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body.landing-page {
     font-family: 'DM Sans', sans-serif;
     color: #333;
     background-color: #ffffff;
+    margin: 0;
 }
 
 .container {
@@ -11,14 +18,21 @@
     margin: 0 auto;
 }
 
-/* Header */
+/* --- Header Mejorado --- */
 .landing-header {
-    background: #fff;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    position: sticky;
+    background: transparent;
+    padding: 20px 0;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.landing-header.scrolled {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .landing-header .container {
@@ -27,21 +41,44 @@
     align-items: center;
 }
 
+/* --- ESTILOS PARA EL NUEVO LOGO --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre la imagen y el texto */
+}
+
+.logo-img {
+    height: 40px; /* Ajusta el tamaño de tu logo aquí */
+}
+
+.landing-header .logo-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+}
+.landing-header.scrolled .logo-text {
+    color: #003366;
+}
+
 .landing-header nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #555;
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
+.landing-header.scrolled .nav-link {
+    color: #555;
+}
 
 .nav-link:hover {
-    color: #2D60ED;
+    color: #61c493;
 }
 
 .btn-primary {
@@ -59,20 +96,24 @@
     transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* --- Hero Section (SOLO ESTILOS GENERALES) --- */
+/* La imagen de fondo fue MOVIDA al index.html */
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/fondo.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 120px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 20px;
     font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero-content .pitch {
@@ -87,96 +128,82 @@
     padding: 18px 40px;
 }
 
-/* Secciones Generales */
+/* --- El resto del CSS sigue igual --- */
 section {
     padding: 80px 0;
 }
-
 section h2 {
     text-align: center;
     font-size: 36px;
     margin-bottom: 60px;
     color: #003366;
 }
-
-/* Purpose / Features Section */
 #purpose {
     background-color: #f9fafb;
 }
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     text-align: center;
 }
-
 .feature-card i {
     font-size: 40px;
     color: #61c493;
     margin-bottom: 20px;
 }
-
 .feature-card h3 {
     font-size: 22px;
     margin-bottom: 15px;
 }
-
 .feature-card p {
     line-height: 1.7;
     color: #666;
 }
-
-/* Gallery / Video Section */
-#gallery .gallery-content {
-    display: flex;
-    justify-content: center;
+#gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
 }
-
-#gallery iframe {
+#gallery .image-grid img {
+    width: 100%;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 100%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
-
-/* Contact Section */
+#gallery .image-grid img:hover {
+    transform: scale(1.05);
+}
 #contact {
     background-color: #f9fafb;
     text-align: center;
 }
-
 #contact p {
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto 30px auto;
 }
-
 .contact-link {
     font-size: 22px;
     font-weight: 500;
     color: #2D60ED;
     text-decoration: none;
 }
-
-/* Footer */
 .landing-footer {
     background-color: #003366;
     color: #fff;
     text-align: center;
     padding: 40px 0;
 }
-
 .social-links {
     margin-bottom: 20px;
 }
-
 .social-links a {
     color: #fff;
     font-size: 24px;
     margin: 0 15px;
     transition: color 0.3s ease;
 }
-
 .social-links a:hover {
-    color: #61c493; 
+    color: #61c493;
 }
