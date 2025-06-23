@@ -1,286 +1,261 @@
-.configuracin {
-  background-color: transparent;
+
+/* ===         ESTILOS COMPARTIDOS         === */
+
+/* Reset básico y fuente */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+/*------------------NAVBAR COMPARTIDO---------------------*/
+.nav-bar_Home {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(
+    262deg,
+    #2D60ED 0%,
+    #7494EB 49%,
+    #BECAE9 100%
+  );
+  color: #FFFFFF;
   width: 100%;
 }
 
-.configuracin .overlap-wrapper {
-  width: 1440px;
-  height: 1024px;
-}
-
-.configuracin .overlap {
-  position: relative;
-  height: 1024px;
-}
-
-.configuracin .div {
-  position: absolute;
-  width: 1440px;
-  height: 125px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    211deg,
-    rgba(45, 96, 237, 1) 0%,
-    rgba(116, 148, 235, 1) 49%,
-    rgba(190, 202, 233, 1) 100%
-  );
-}
-
-
-.configuracin .settings {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  top: 31px;
-  left: 1322px;
-}
-
-
-.configuracin .text-wrapper-7 {
-  position: relative;
-  width: fit-content;
-  margin-top: -8.50px;
-  margin-bottom: -6.50px;
-  margin-left: -12.50px;
-  margin-right: -12.50px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -0.40px;
-  line-height: 23px;
-  white-space: nowrap;
-}
-
-
-
-
-.configuracin .rectangle-6 {
-  position: absolute;
-  width: 1440px;
-  height: 899px;
-  top: 125px;
-  left: 0;
-  background-color: #646464;
-  opacity: 0.5;
-}
-
-.configuracin .notificacion {
-  position: absolute;
-  width: 619px;
-  height: 726px;
-  top: 125px;
-  left: 788px;
-}
-
-
-
-.configuracin .vector {
-  position: absolute;
-  width: 85px;
-  height: 52px;
-  top: 0;
-  left: 517px;
-}
-
-.configuracin .rectangle-7 {
-  position: absolute;
-  width: 619px;
-  height: 694px;
-  top: 33px;
-  left: 0;
-  background-color: #2d60ff;
-  border-radius: 50px;
-}
-
-
-.configuracin .rectangle-8 {
-  position: absolute;
-  width: 539px;
-  height: 370px;
-  top: 233px;
-  left: 828px;
-  background-color: #f6f6f6;
-  border-radius: 10px;
-}
-
-.configuracin .rectangle-9 {
-  position: absolute;
-  width: 539px;
-  height: 167px;
-  top: 634px;
-  left: 828px;
-  background-color: #f6f6f6;
-  border-radius: 10px;
-}
-
-.configuracin .text-wrapper-24 {
-  position: absolute;
-  width: 407px;
-  top: 261px;
-  left: 828px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 800;
-  color: #04000e;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.configuracin .text-wrapper-25 {
-  position: absolute;
-  width: 261px;
-  top: 342px;
-  left: 981px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.configuracin .text-wrapper-26 {
-  position: absolute;
-  width: 340px;
-  top: 393px;
-  left: 981px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.configuracin .text-wrapper-27 {
-  position: absolute;
-  width: 254px;
-  top: 445px;
-  left: 981px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.configuracin .notification-2 {
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  top: 267px;
-  left: 868px;
-}
-
-.configuracin .overlap-group-wrapper {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 344px;
-  left: 927px;
-}
-
-
-
-.configuracin .check-small {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  left: 0;
-}
-
-.configuracin .group-2 {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 395px;
-  left: 927px;
-}
-
-.configuracin .group-3 {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 447px;
-  left: 927px;
-}
-
-
-
-.configuracin .btn-get-started-4 {
-  width: 248px;
-  top: 512px;
-  left: 974px;
+.logo_Home {
   display: flex;
-  height: 48px;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 40px;
-  position: absolute;
-  background-color: #00d100;
-  border-radius: 30px;
+  gap: 0.75rem;
 }
 
-.configuracin .text-wrapper-28 {
-  position: absolute;
-  width: 451px;
-  top: 658px;
-  left: 829px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 800;
-  color: #04000e;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
+.logo-icon_Home {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-.configuracin .enter {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  top: 660px;
-  left: 866px;
+.logo-text_Home {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #FFFFFF; 
+  line-height: 1;
 }
 
-.configuracin .btn-get-started-5 {
-  width: 181px;
-  top: 722px;
-  left: 1007px;
+.menu_Home {
   display: flex;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 40px;
-  position: absolute;
-  background-color: #00d100;
-  border-radius: 30px;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.configuracin .text-wrapper-29 {
-  position: relative;
-  width: fit-content;
-  margin-top: -8.50px;
-  margin-bottom: -6.50px;
-  margin-left: -10.50px;
-  margin-right: -10.50px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -0.40px;
-  line-height: 23px;
-  white-space: nowrap;
+.nav-link_Home {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link_Home:hover,
+.nav-link_Home.active_Home {
+  font-weight: 700;
+}
+
+.icon-nav_Home {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.actions_Home {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.actions_Home a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.notification-icon_Home,
+.settings-icon_Home {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.notification-icon_Home:hover,
+.settings-icon_Home:hover {
+  transform: scale(1.1);
+}
+
+/* === ESTILOS ESPECÍFICOS PARA CONFIGURACIÓN    === */
+
+
+.config-main {
+    padding: 2rem 5%;
+    max-width: 800px; /* Centra el contenido */
+    margin: 0 auto;
+}
+
+.config-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.config-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2D60FF;
+}
+
+.config-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.card-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #04000E;
+}
+
+.config-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.config-option-label {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* --- Estilos para el Toggle Switch --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2D60FF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* --- Estilos para los botones --- */
+.card-footer {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #00D100;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #00b300;
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background-color: #FD3131;
+    color: white;
+}
+.btn-logout:hover {
+    background-color: #e82c2c;
+    transform: translateY(-2px);
+}
+
+.logout-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .switch-wrapper {
   position: absolute;

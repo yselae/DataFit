@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso</title>
+    <link rel="stylesheet" href="css/progreso-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="nav-bar_Home">
+    <div class="logo_Home">
+        <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
+        <span class="logo-text_Home">Data Fit</span>
+    </div>
+
+    <ul class="menu_Home">
+        <li><a href="index_home.html" class="nav-link_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
+        <li><a href="rutinas.html" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
+        <li><a href="desafios.html" class="nav-link_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
+        <li><a href="progreso.html" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
+    </ul>
+
+    <div class="actions_Home">
+        <a href="notificaciones.html" title="Notificaciones"><i class="fas fa-bell notification-icon_Home"></i></a>
+        <a href="configuracion.html" title="Configuración"><i class="fas fa-cog settings-icon_Home"></i></a>
+    </div>
+</nav>
+
+  <main>
+    <div class="main-container">
+
+        <div class="column-left">
+            <div class="page-header">
+                <a href="#Back"><img class="back-icon" src="assets/icons/Back.png" alt="Back"></a>
+                <h1>MI PROGRESO</h1>
+            </div>
+
+            <div class="progress-ring" aria-label="Progreso de días" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="18" style="--progress: 60%;">
+                <div class="progress-ring__circle"></div>
+                <div class="progress-ring__text">18 / 30 días</div>
+            </div>
+
+            <div class="section-header">
+                <img class="section-icon" src="assets/icons/Historial.png" alt="Historial">
+                <h2>Mi Historial</h2>
+            </div>
+
+            <div class="history-list">
+                <div class="cuadro">
+                    <p>Contenido del recuadro 1</p>
+                    <input type="checkbox" class="check-corner" id="check1">
+                </div>
+                <div class="cuadro">
+                    <p>Contenido del recuadro 2</p>
+                    <input type="checkbox" class="check-corner" id="check2">
+                </div>
+                <div class="cuadro">
+                    <p>Contenido del recuadro 3</p>
+                    <input type="checkbox" class="check-corner" id="check3">
+                </div>
+            </div>
+        </div>
+
+        <div class="column-right">
+            <div class="cuadroObjetivo">
+                <p>OBJETIVO</p>
+            </div>
+
+            <div class="cuadrogrande">
+                <p class="stats-title">Estadística</p>
+                <div class="stats-bars-container">
+                    <div class="stat-item">
+                        <span class="stat-label">Rutina 1</span>
+                        <div class="stat-bar" style="width: 60%; background-color: #2364f3;"></div>
+                        <span>12 tareas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Rutina 2</span>
+                        <div class="stat-bar" style="width: 90%; background-color: #4a90e2;"></div>
+                        <span>18 tareas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Rutina 3</span>
+                        <div class="stat-bar" style="width: 45%; background-color: #2364f3;"></div>
+                        <span>9 tareas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Rutina 4</span>
+                        <div class="stat-bar" style="width: 75%; background-color: #4a90e2;"></div>
+                        <span>15 tareas</span>
+                    </div>
+                </div>
+
+                <p class="stats-title">Comparación entre semanas</p>
+
+                <div class="grafico-barras-dobles">
+                    <div class="barra-con-etiquetas">
+                        <span>Rutina 1</span>
+                        <div class="barras-por-rutina">
+                            <div class="barra semana1" style="height: 60px;"></div>
+                            <div class="barra semana2" style="height: 90px;"></div>
+                        </div>
+                    </div>
+                    <div class="barra-con-etiquetas">
+                        <span>Rutina 2</span>
+                        <div class="barras-por-rutina">
+                            <div class="barra semana1" style="height: 100px;"></div>
+                            <div class="barra semana2" style="height: 120px;"></div>
+                        </div>
+                    </div>
+                    <div class="barra-con-etiquetas">
+                        <span>Rutina 3</span>
+                        <div class="barras-por-rutina">
+                            <div class="barra semana1" style="height: 80px;"></div>
+                            <div class="barra semana2" style="height: 110px;"></div>
+                        </div>
+                    </div>
+                    <div class="barra-con-etiquetas">
+                        <span>Rutina 4</span>
+                        <div class="barras-por-rutina">
+                            <div class="barra semana1" style="height: 130px;"></div>
+                            <div class="barra semana2" style="height: 140px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leyenda">
+                    <div><span class="color-box semana1"></span> Semana 1</div>
+                    <div><span class="color-box semana2"></span> Semana 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,198 +1,204 @@
-.notificaciones {
-  background-color: transparent;
+
+/* ===         ESTILOS COMPARTIDOS         === */
+
+
+/* Reset básico y fuente */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+/*------------------NAVBAR COMPARTIDO---------------------*/
+.nav-bar_Home {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(
+    262deg,
+    #2D60ED 0%,
+    #7494EB 49%,
+    #BECAE9 100%
+  );
+  color: #FFFFFF;
   width: 100%;
 }
 
-.notificaciones .overlap-wrapper {
-  width: 1440px;
-  height: 1024px;
+.logo_Home {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.notificaciones .overlap {
-  position: relative;
-  height: 1024px;
+.logo-icon_Home {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-
-.notificaciones .div {
-  position: absolute;
-  width: 1440px;
-  height: 125px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    211deg,
-    rgba(45, 96, 237, 1) 0%,
-    rgba(116, 148, 235, 1) 49%,
-    rgba(190, 202, 233, 1) 100%
-  );
+.logo-text_Home {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #FFFFFF; 
+  line-height: 1;
 }
 
-
-.notificaciones .notification {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  top: 31px;
-  left: 1223px;
+.menu_Home {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.notificaciones .settings {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  top: 31px;
-  left: 1322px;
+.nav-link_Home {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
 }
 
-
-.notificaciones .ellipse {
-  position: absolute;
-  width: 16px;
-  height: 15px;
-  top: 34px;
-  left: 1263px;
-  background-color: #fd3030;
-  border-radius: 8px / 7.5px;
+.nav-link_Home:hover,
+.nav-link_Home.active_Home {
+  font-weight: 700;
 }
 
-
-.notificaciones .rectangle-6 {
-  position: absolute;
-  width: 1440px;
-  height: 899px;
-  top: 125px;
-  left: 0;
-  background-color: #646464;
-  opacity: 0.5;
+.icon-nav_Home {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
 }
 
-.notificaciones .notificacion {
-  position: absolute;
-  width: 619px;
-  height: 531px;
-  top: 125px;
-  left: 788px;
+.actions_Home {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.actions_Home a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.notification-icon_Home,
+.settings-icon_Home {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.notification-icon_Home:hover,
+.settings-icon_Home:hover {
+  transform: scale(1.1);
 }
 
 
+/* === ESTILOS ESPECÍFICOS PARA NOTIFICACIONES   === */
 
-.notificaciones .vector {
-  position: absolute;
-  width: 70px;
-  height: 28px;
-  top: 0;
-  left: 431px;
+.notifications-main {
+    padding: 2rem 5%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.notificaciones .rectangle-7 {
-  position: absolute;
-  width: 619px;
-  height: 508px;
-  top: 24px;
-  left: 0;
-  background-color: #2d60ff;
-  border-radius: 50px;
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.notifications-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2D60FF;
+}
+
+.btn-mark-all {
+    background: none;
+    border: none;
+    color: #2D60FF;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    position: relative;
+    border-left: 5px solid transparent; 
+}
+
+/* Tipos de notificación */
+.notification-item.success {
+    border-left-color: #00D100;
+}
+.notification-item.info {
+    border-left-color: #2D60FF;
+}
+.notification-item.warning {
+    border-left-color: #FFA500;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+.notification-item.success .notification-icon {
+    color: #00D100;
+}
+.notification-item.info .notification-icon {
+    color: #2D60FF;
+}
+.notification-item.warning .notification-icon {
+    color: #FFA500;
 }
 
 
-
-.notificaciones .rectangle-8 {
-  position: absolute;
-  width: 539px;
-  height: 118px;
-  top: 233px;
-  left: 828px;
-  background-color: #f6f6f6;
-  border-radius: 10px;
+.notification-content {
+    flex-grow: 1;
 }
 
-.notificaciones .rectangle-9 {
-  position: absolute;
-  width: 539px;
-  height: 93px;
-  top: 370px;
-  left: 828px;
-  background-color: #f6f6f6;
-  border-radius: 10px;
+.notification-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
-.notificaciones .rectangle-10 {
-  position: absolute;
-  width: 539px;
-  height: 120px;
-  top: 490px;
-  left: 828px;
-  background-color: #f6f6f6;
-  border-radius: 10px;
+.notification-time {
+    font-size: 0.85rem;
+    color: #888;
 }
 
-.notificaciones .icon {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 285px;
-  left: 1332px;
+.notification-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+    padding: 5px;
+}
+.notification-close-btn:hover {
+    color: #333;
 }
 
-.notificaciones .icon-2 {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 413px;
-  left: 1332px;
-}
-
-.notificaciones .icon-3 {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 545px;
-  left: 1332px;
-}
-
-.notificaciones .p {
-  position: absolute;
-  width: 422px;
-  top: 247px;
-  left: 893px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  text-align: justify;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.notificaciones .text-wrapper-24 {
-  position: absolute;
-  width: 422px;
-  top: 384px;
-  left: 893px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  text-align: justify;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.notificaciones .text-wrapper-25 {
-  position: absolute;
-  width: 422px;
-  top: 504px;
-  left: 893px;
-  font-family: "DM Sans", Helvetica;
-  font-weight: 500;
-  color: #04000e;
-  font-size: 24px;
-  text-align: justify;
-  letter-spacing: 0;
-  line-height: normal;
-}
 

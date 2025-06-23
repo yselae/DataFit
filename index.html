@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fit - Tu Entrenador Personal Inteligente</title>
+    <link rel="stylesheet" href="css/index-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+     <style>
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/fondo.jpg');
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <header class="landing-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/icons/logo.png" alt="Logo de Data Fit" class="logo-img">
+                <span class="logo-text">Data Fit</span>
+            </div>
+            <nav>
+                <a href="#purpose" class="nav-link">Propósito</a>
+                <a href="#gallery" class="nav-link">Galería</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+                <a href="index_home.html" class="btn-primary btn-login">Ingresar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <h1>Transforma tu Físico. Mide tu Progreso.</h1>
+                <p class="pitch">Deja de adivinar en el gimnasio. Con Data Fit, crea rutinas personalizadas, sigue tus entrenamientos y alcanza tus metas de salud con una precisión nunca antes vista.</p>
+                <a href="index_home.html" class="btn-primary btn-cta">Comienza tu transformación</a>
+            </div>
+        </section>
+
+        <section id="purpose">
+            <div class="container">
+                <h2>Tu Gimnasio, Más Inteligente</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Crea Rutinas a Medida</h3>
+                        <p>Diseña planes de entrenamiento basados en tus objetivos, nivel de intensidad y horarios. Tren superior, inferior, o cuerpo completo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Visualiza tu Progreso</h3>
+                        <p>Registra cada repetición y serie. Nuestras gráficas te mostrarán cómo aumentas tu fuerza y resistencia con el tiempo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Alcanza tus Metas</h3>
+                        <p>Ya sea ganar músculo, perder grasa o aumentar tu energía, Data Fit te mantiene enfocado en lo que de verdad importa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2>Mira la App en Acción</h2>
+                <div class="image-grid">
+                    <img src="assets/img/Mis Rutinas.png" alt="Rutinas">
+                    <img src="assets/img/desafios.jpg" alt="Desafios">
+                    <img src="assets/img/Progreso.png" alt="Progreso">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>¿Tienes Dudas? ¡Hablemos!</h2>
+                <p>Estamos aquí para ayudarte a empezar. Escríbenos un correo o síguenos en nuestras redes.</p>
+                <div class="contact-info">
+                    <a href="mailto:hola@datafit.com" class="contact-link">hola@datafit.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="landing-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Data Fit. Todos los derechos reservados. Lima, Perú.</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('.landing-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
