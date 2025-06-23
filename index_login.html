@@ -71,7 +71,7 @@
         
         <!-- Enlace olvidar contraseña -->
         <div class="forgot-password_Login">
-          <a href="#" class="forgot-link_Login">¿Olvidó su contraseña?</a>
+          <a href="index_Restablecer.html" class="forgot-link_Login">¿Olvidó su contraseña?</a>
         </div>
       </div>
       
@@ -82,17 +82,8 @@
     <!-- Sección de registro -->
     <div class="register-section_Login">
       <span class="register-text_Login">¿No tiene cuenta? </span>
-      <a href="#" class="register-link_Login">Regístrese acá</a>
+      <a href="index_Registro.html" class="register-link_Login">Regístrese acá</a>
     </div>
-    
-    <!-- Términos y condiciones (opcional, comentado por ahora) -->
-    <!--
-    <p class="terms-text_Login">
-      Al crear una cuenta, acepta los 
-      <a href="#" class="terms-link_Login">Términos de uso</a> y la 
-      <a href="#" class="terms-link_Login">Política de privacidad</a>
-    </p>
-    -->
     
   </div>
 
@@ -101,21 +92,16 @@
     © 2025 Data Fit, Inc. - All Rights Reserved
   </footer>
 
-  <!-- JavaScript para manejo de errores -->
   <script>
     // Referencias a elementos del DOM
     const loginForm = document.getElementById('loginForm_Login');
     const emailInput = document.getElementById('email_Login');
     const passwordInput = document.getElementById('password_Login');
-    const loginContainer = document.getElementById('loginContainer_Login');
-    const successIcon = document.getElementById('successIcon_Login');
-    const successMessage = document.getElementById('successMessage_Login');
 
     // Estados de error posibles
     const ERROR_STATES = {
       EMPTY_FIELDS: 'empty_fields',
-      INVALID_CREDENTIALS: 'invalid_credentials',
-      EMAIL_IN_USE: 'email_in_use'
+      INVALID_CREDENTIALS: 'invalid_credentials'
     };
 
     // Placeholders originales
@@ -126,52 +112,18 @@
 
     // Mensajes de error
     const ERROR_MESSAGES = {
-      email: {
-        empty: 'Email obligatorio',
-        invalid: 'Email incorrecto',
-        in_use: 'El email ya está en uso'
-      },
-      password: {
-        empty: 'Contraseña obligatoria',
-        invalid: 'Contraseña incorrecta'
-      }
+      email: 'Email obligatorio',
+      password: 'Contraseña obligatoria'
     };
 
-    // Función para limpiar estados de error
+    // Función para limpiar estados previos
     function clearErrorStates() {
       emailInput.classList.remove('error_Login');
       passwordInput.classList.remove('error_Login');
-      
       emailInput.placeholder = ORIGINAL_PLACEHOLDERS.email;
       passwordInput.placeholder = ORIGINAL_PLACEHOLDERS.password;
-      
-      // Limpiar también estados de éxito
-      clearSuccessState();
-    }
-
-    // Función para limpiar estado de éxito
-    function clearSuccessState() {
-      loginContainer.classList.remove('success_Login');
-      successIcon.classList.remove('show_Login');
-      successMessage.classList.remove('show_Login');
-    }
-
-    // Función para mostrar estado de éxito
-    function showSuccessState() {
-      clearErrorStates();
-      loginContainer.classList.add('success_Login');
-      successIcon.classList.add('show_Login');
-      successMessage.classList.add('show_Login');
-      
-      // Limpiar formulario
       emailInput.value = '';
       passwordInput.value = '';
-      
-      // Opcional: redirigir después de un tiempo
-      setTimeout(() => {
-        console.log('🎉 Redirigiendo al dashboard...');
-        // window.location.href = '/dashboard'; // Descomenta para redirigir
-      }, 2000);
     }
 
     // Función para mostrar error en un campo
@@ -179,70 +131,43 @@
       const input = field === 'email' ? emailInput : passwordInput;
       input.classList.add('error_Login');
       input.value = '';
-      input.placeholder = ERROR_MESSAGES[field][errorType];
+      input.placeholder = ERROR_MESSAGES[field];
     }
 
-    // Función para simular login (errores y éxito)
+    // Simular login
     function simulateLogin() {
       const emailValue = emailInput.value.trim();
       const passwordValue = passwordInput.value.trim();
-      
-      // Simular diferentes escenarios
-      // Puedes modificar esta lógica según tus necesidades
-      
+
       if (!emailValue && !passwordValue) {
-        // Campos vacíos
         showFieldError('email', 'empty');
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (!emailValue) {
-        // Solo email vacío
         showFieldError('email', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (!passwordValue) {
-        // Solo contraseña vacía
         showFieldError('password', 'empty');
         return ERROR_STATES.EMPTY_FIELDS;
       } else if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
-        // Credenciales correctas (ejemplo específico)
-        showSuccessState();
+        console.log('✅ Login exitoso!');
+        window.location.href = "index_home.html";
         return 'SUCCESS';
-      } else if (emailValue === 'usuario@existe.com') {
-        // Email ya en uso (ejemplo específico)
-        showFieldError('email', 'in_use');
-        return ERROR_STATES.EMAIL_IN_USE;
       } else {
-        // Credenciales incorrectas (comportamiento por defecto)
         showFieldError('email', 'invalid');
         showFieldError('password', 'invalid');
         return ERROR_STATES.INVALID_CREDENTIALS;
       }
     }
 
-    // Manejador del envío del formulario
+    // Manejador de submit
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Limpiar estados previos
       clearErrorStates();
-      
-      // Simular validación/autenticación
-      const result = simulateLogin();
-      
-      // Logging para desarrollo
-      console.log('Resultado del login:', result);
-      
-      if (result === 'SUCCESS') {
-        console.log('✅ Login exitoso!');
-      } else {
-        console.log('❌ Error en login:', result);
-      }
-      
-      // En una implementación real, aquí harías la llamada al servidor
-      // y manejarías la respuesta correspondiente
+      simulateLogin();
     });
 
-    // Limpiar errores cuando el usuario comience a escribir
+    // Limpiar errores al escribir
     emailInput.addEventListener('input', function() {
       if (this.classList.contains('error_Login')) {
         this.classList.remove('error_Login');
@@ -256,42 +181,8 @@
         this.placeholder = ORIGINAL_PLACEHOLDERS.password;
       }
     });
-
-    // Función para probar diferentes estados (para testing)
-    function testState(stateType) {
-      clearErrorStates();
-      
-      switch(stateType) {
-        case 'empty':
-          showFieldError('email', 'empty');
-          showFieldError('password', 'empty');
-          break;
-        case 'invalid':
-          showFieldError('email', 'invalid');
-          showFieldError('password', 'invalid');
-          break;
-        case 'email_in_use':
-          showFieldError('email', 'in_use');
-          break;
-        case 'success':
-          showSuccessState();
-          break;
-      }
-    }
-
-    // Hacer las funciones de testing disponibles globalmente para desarrollo
-    window.testState_Login = testState;
-    window.clearStates_Login = clearErrorStates;
-
-    console.log('🔐 Login form initialized');
-    console.log('💡 Credenciales de prueba exitosa: admin@datafit.com / 123456');
-    console.log('💡 Para probar estados:');
-    console.log('   - testState_Login("empty") - Campos obligatorios');
-    console.log('   - testState_Login("invalid") - Credenciales incorrectas');  
-    console.log('   - testState_Login("email_in_use") - Email ya existe');
-    console.log('   - testState_Login("success") - Login exitoso');
-    console.log('   - clearStates_Login() - Limpiar estados');
   </script>
 
 </body>
 </html>
+
