@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Fit - Restablecer Contraseña</title>
+
+  <!-- Google Fonts - DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../css/styles_Registro.css">
+</head>
+<body class="body_Registro">
+
+  <!-- Header con logo -->
+  <header class="header_Registro">
+    <div class="logo-container_Registro">
+      <img src="../assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Registro">
+      <span class="logo-text_Registro">Data Fit</span>
+    </div>
+  </header>
+
+  <!-- Contenedor principal del restablecimiento -->
+  <div class="restablecer-container_Restablecer" id="resetContainer">
+    
+    <!-- Títulos -->
+    <h1 class="reset-title_Restablecer">¿OLVIDÓ SU CONTRASEÑA?</h1>
+    <p class="reset-description_Restablecer">
+      Si olvidó su contraseña, ingrese su email para restablecerla.
+    </p>
+
+    <!-- Formulario -->
+    <form class="reset-form_Login" id="resetForm_Registro" novalidate>
+      <!-- Campo Email -->
+      <div class="form-group_Registro">
+        <label for="email_Registro" class="form-label_Registro">Email</label>
+        <input 
+          type="email" 
+          id="email_Registro" 
+          name="email" 
+          class="form-input_Registro" 
+          placeholder="Ingrese su email"
+          autocomplete="email"
+        >
+      </div>
+
+      <!-- Mensaje de éxito (oculto por defecto) -->
+      <div class="success-message_Restablecer" id="successMessage_Registro">
+        Se ha enviado un enlace de restablecimiento a su email.<br>
+        Revise su bandeja de entrada y spam.
+      </div>
+
+      <!-- Botón Enviar -->
+      <button type="submit" class="reset-button_Restablecer">Enviar</button>
+    </form>
+
+    <!-- Enlace registro -->
+    <div class="register-section_Login">
+      <span class="register-text_Login">¿No tiene cuenta? </span>
+      <a href="index_Registro.html" class="register-link_Login">Regístrese acá</a>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <footer class="copyright_Registro">
+    © 2025 Data Fit, Inc. - All Rights Reserved
+  </footer>
+
+  <!-- JavaScript para manejo de errores -->
+  <script>
+    // Referencias a elementos del DOM
+    const resetForm = document.getElementById('resetForm_Registro');
+    const emailInput = document.getElementById('email_Registro');
+    const successMessage = document.getElementById('successMessage_Registro');
+
+    // Placeholders y mensajes
+    const ORIGINAL_PLACEHOLDER = 'Ingrese su email';
+    const ERROR_MESSAGE = 'Email obligatorio';
+
+    // Función para limpiar estados
+    function clearErrorState() {
+      emailInput.classList.remove('error_Login');
+      emailInput.placeholder = ORIGINAL_PLACEHOLDER;
+      emailInput.value = '';
+
+      if (successMessage && successMessage.classList.contains('show_Restablecer')) {
+        successMessage.classList.remove('show_Restablecer');
+      }
+    }
+
+    // Función para mostrar error
+    function showError() {
+      emailInput.classList.add('error_Registro');
+      emailInput.value = '';
+      emailInput.placeholder = ERROR_MESSAGE;
+    }
+
+    // Función para mostrar éxito y redirigir
+    function showSuccess() {
+      clearErrorState();
+      if (successMessage) {
+        successMessage.classList.add('show_Restablecer');
+      }
+
+      setTimeout(() => {
+        console.log('🔄 Redirigiendo a login...');
+        window.location.href = "../index_Login.html";
+      }, 3000);
+    }
+
+    // Validación del formulario
+    resetForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const emailValue = emailInput.value.trim();
+
+      if (!emailValue) {
+        showError();
+      } else {
+        showSuccess();
+      }
+    });
+
+    // Limpiar estado al escribir
+    emailInput.addEventListener("input", function() {
+      if (this.classList.contains("error_Login")) {
+        this.classList.remove("error_Login");
+        this.placeholder = ORIGINAL_PLACEHOLDER;
+      }
+      if (successMessage && successMessage.classList.contains("show_Restablecer")) {
+        successMessage.classList.remove("show_Restablecer");
+      }
+    });
+
+    // Testing desde consola
+    window.testResetState = function(stateType) {
+      clearErrorState();
+      if (stateType === "empty") {
+        showError();
+      } else if (stateType === "success") {
+        showSuccess();
+      }
+    };
+
+    console.log('🔑 Reset password form initialized');
+    console.log('💡 Para probar:');
+    console.log('   - testResetState("empty") - Email obligatorio');
+    console.log('   - testResetState("success") - Email enviado');
+    console.log('   - clearErrorState() - Limpiar estados');
+  </script>
+</body>
+</html>

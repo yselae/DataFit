@@ -1,3 +1,4 @@
+/* Reset básico y fuente */
 *{
     margin: 0;
     padding: 0;
@@ -5,76 +6,105 @@
     font-family: 'DM Sans', sans-serif;
 }
 
-.topbar{
-    display: flex;
-    flex-direction: row;
-    background: linear-gradient(to right, white, blue);
-    width: 100%;
-    height: 80px;
-    align-items: center;
+body {
+    background-color: #F4F4F4;
 }
 
-.logo-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100%;
+/*------------------NAVBAR COMPARTIDO---------------------*/
+.nav-bar_Home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(
+    262deg,
+    #2D60ED 0%,
+    #7494EB 49%,
+    #BECAE9 100%
+  );
+  color: #FFFFFF;
+  width: 100%;
+  height: auto;
+  min-height: 4rem;
+  position: relative;
+  z-index: 1000;
 }
 
-.logo{
-    width: 80px;
-    height: 80px;
+.logo_Home {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.title{
-    font-weight: 700;
-    font-size: 25px;
+.logo-icon_Home {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
 }
 
-.seccion{
-    font-weight: 300;
-    font-size: 20px;
-    cursor: pointer;
+.logo-text_Home {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #FFFFFF; 
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.inicio{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.menu_Home {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.secciones{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-    height: 100%;
-    margin-left: 148px;
-    color: white;
-    text-transform: uppercase;
+.nav-link_Home {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: font-weight 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.campana{
-    margin-left: 320px;
+.nav-link_Home:hover,
+.nav-link_Home.active_Home {
+  font-weight: 700;
 }
 
-.campana-icon{
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
+.icon-nav_Home {
+  margin-right: 0.5rem;
+  font-size: 1.125rem;
 }
 
-.ajustes{
-    margin-left: 20px;
+.actions_Home {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
 }
 
-.ajustes-icon{
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
+.actions_Home a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
+
+.notification-icon_Home,
+.settings-icon_Home {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.notification-icon_Home:hover,
+.settings-icon_Home:hover {
+  transform: scale(1.1);
+}
+
+/* === ESTILOS ESPECÍFICOS PARA DESAFÍOS === */
+
 
 .back-button{
     display: flex;
@@ -103,12 +133,14 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 2%;
     margin-top: 20px;
 }
 
 .main-group{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .main_challenges{
@@ -120,7 +152,6 @@
     height: 56px;
     background-color: #D7EDFF;
     border-radius: 28px; 
-    margin-left: 232px;  
 }
 
 .search-input{
@@ -130,7 +161,8 @@
     font-weight: 500;
     font-size: 20px;
     color: #49454F;
-    
+    width: 100%;
+    padding: 0 1rem;
 }
 
 .search-input:focus{
@@ -156,6 +188,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     width: 227px;
     height: 56px;
     background-color: #2D60FF;
@@ -163,60 +196,58 @@
     border-radius: 100px;
     color: white;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 38px;
     margin-right: 40px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .content{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: space-around;
+    align-items: flex-start;
     margin: auto;
     margin-top: 20px;
     width: 95%;
+    gap: 2rem;
 }
 
 .content-group{
     display: flex;
     flex-direction: column;
-    width: 620px;
+    flex: 1; 
+    max-width: 620px;
 }
 
 .content-title{
     font-weight: 600;
     font-size: 40px;
     color: #00D100;
-    margin: auto;
+    text-align: center; 
+    margin-bottom: 20px; 
 }
 
-.challenges-container{
+.challenges-container,
+.challenges-container-actives {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 15px; 
+    margin-top: 10px;
     width: 100%;
-    background-color: #A8D74E;
-    padding: 10px;
+    background-color: #f0f0f0; 
+    padding: 20px;
     border-radius: 12px;
-}
-
-.challenges-container-actives{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    width: 100%;
 }
 
 .challenge-card{
     display: flex;
     flex-direction: column;
-    background-color: #F6F6F6;
+    background-color: #FFFFFF;
     border-radius: 12px;
-    padding: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .challenge-header{
@@ -224,33 +255,37 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    margin: auto;
+    width: 100%;
 }
 
 .challenge-text{
     font-weight: 600;
     font-size: 20px;
     color: #04000E;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .challenge-options{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    gap: 15px;
+}
+.challenge-options img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
 }
 
 .challenge-body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 95%;
-    margin: auto;
+    width: 100%;
     margin-top: 12px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
+    color: #555;
 }
 
 .challenge-button{
@@ -259,17 +294,19 @@
     background-color: #00D100;
     color: white;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px; 
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    margin: auto;
-    margin-top: 20px;
+    margin: 20px auto 0 auto; 
+    transition: background-color 0.3s;
 }
-
+.challenge-button:hover{
+    background-color: #00B300;
+}
 .favorite-toggle-icon{
     cursor: pointer;
 }
