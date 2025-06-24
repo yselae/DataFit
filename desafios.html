@@ -111,11 +111,68 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            var modal = document.getElementById("challenge-modal");
+            var nameInput = document.getElementById("challenge-name");
+            var descInput = document.getElementById("challenge-desc");
+            var cancelBtn = document.getElementById("cancel-button");
+            var saveBtn = document.getElementById("save-button");
+            var createBtn = document.querySelector(".create-challenge-button");
+            var activeContainer = document.querySelector(".challenges-container-actives");
+
+            function clearModal() {
+                nameInput.value = "";
+                descInput.value = "";
+            }
+
+            function createChallengeCard(name, desc) {
+                var card = document.createElement("div");
+                card.className = "challenge-card";
+                card.innerHTML = `
+                    <div class="challenge-header">
+                        <p class="challenge-text">${name}</p>
+                        <div class="challenge-options">
+                            <img src="/assets/unstar.svg" class="favorite-toggle-icon" data-favorite="false"/>
+                            <img src="/assets/edit.svg"/>
+                            <img src="/assets/trash.svg" class="delete-icon"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>${desc}</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                `;
+                return card;
+            }
+
+            createBtn.addEventListener("click", function () {
+                modal.classList.remove("hidden");
+            });
+
+            cancelBtn.addEventListener("click", function () {
+                modal.classList.add("hidden");
+                clearModal();
+            });
+
+            saveBtn.addEventListener("click", function () {
+                var name = nameInput.value.trim();
+                var desc = descInput.value.trim();
+                if (!name || !desc) {
+                    alert("Por favor, completa ambos campos.");
+                    return;
+                }
+                var newCard = createChallengeCard(name, desc);
+                activeContainer.appendChild(newCard);
+                modal.classList.add("hidden");
+                clearModal();
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
             var favoriteContainer = document.querySelector(".challenges-container");
             var activeContainer = document.querySelector(".challenges-container-actives");
 
             function updateIcon(icon, isFavorite) {
-                icon.src = isFavorite ? "assets/star.svg" : "assets/unstar.svg";
+                icon.src = isFavorite ? "/assets/star.svg" : "/assets/unstar.svg";
                 icon.dataset.favorite = isFavorite.toString();
             }
 
@@ -127,32 +184,131 @@
                 var isFavorite = icon.dataset.favorite === "true";
                 var card = icon.closest(".challenge-card");
                 if (!card) return;
-                
-                // Mover el card al contenedor opuesto
+
                 if (isFavorite) {
-                    // De favoritos a activos
                     updateIcon(icon, false);
                     activeContainer.appendChild(card);
                 } else {
-                    // De activos a favoritos
                     updateIcon(icon, true);
                     favoriteContainer.appendChild(card);
                 }
             }
-            function handleDelete(e){
+
+            function handleDelete(e) {
                 var target = e.target;
-                if (!target.classList.contains("delete-icon"))
-                    return;
+                if (!target.classList.contains("delete-icon")) return;
+
                 var card = target.closest(".challenge-card");
-                if (!card)
-                    return;
-                // Eliminar el card del DOM
+                if (!card) return;
+
                 card.remove();
             }
-            
+
             document.body.addEventListener("click", handleToggleFavorite);
             document.body.addEventListener("click", handleDelete);
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const mainChallengesDiv = document.querySelector(".main_challenges");
+            const suggestedModal = document.getElementById("suggested-challenges-modal");
+            const suggestedList = document.getElementById("suggested-challenges-list");
+            const activeContainer = document.querySelector(".challenges-container-actives");
+
+            const suggestedChallenges = [
+                { title: "Completar 5 dias", desc: "Completa 5 dias de rutinas" },
+                { title: "1 semana sin azúcar", desc: "Completa 1 semana sin azúcares" },
+                { title: "Duerme temprano 2 días", desc: "Descansa a las 22:00 por 2 días" },
+            ];
+
+            function createChallengeCard(name, desc) {
+                var card = document.createElement("div");
+                card.className = "challenge-card";
+                card.innerHTML = `
+                    <div class="challenge-header">
+                        <p class="challenge-text">${name}</p>
+                        <div class="challenge-options">
+                            <img src="/assets/unstar.svg" class="favorite-toggle-icon" data-favorite="false"/>
+                            <img src="/assets/edit.svg"/>
+                            <img src="/assets/trash.svg" class="delete-icon"/>
+                        </div>
+                    </div>
+                    <div class="challenge-body">
+                        <p>${desc}</p>
+                    </div>
+                    <button class="challenge-button">marcar como completado</button>
+                `;
+                return card;
+            }
+
+            function createSuggestedItem(title, desc) {
+                const item = document.createElement("div");
+                item.className = "suggested-item";
+
+                const info = document.createElement("div");
+                info.className = "suggested-info";
+                info.innerHTML = `<div class="suggested-title">${title}</div><div class="suggested-desc">${desc}</div>`;
+
+                const actions = document.createElement("div");
+                actions.className = "suggested-actions";
+
+                const accept = document.createElement("button");
+                accept.className = "accept-btn";
+                accept.innerHTML = "✔";
+                accept.addEventListener("click", () => {
+                    const newCard = createChallengeCard(title, desc);
+                    activeContainer.appendChild(newCard);
+                    item.remove();
+                    suggestedModal.classList.add("hidden");
+                });
+
+                const reject = document.createElement("button");
+                reject.className = "reject-btn";
+                reject.innerHTML = "✖";
+                reject.addEventListener("click", () => {
+                    item.remove();
+                    if (suggestedList.children.length === 0) {
+                        suggestedModal.classList.add("hidden");
+                    }
+                });
+
+                actions.appendChild(accept);
+                actions.appendChild(reject);
+
+                item.appendChild(actions);
+                item.appendChild(info);
+
+                return item;
+            }
+
+            mainChallengesDiv.addEventListener("click", function () {
+                suggestedList.innerHTML = "";
+                suggestedChallenges.forEach(challenge => {
+                    const el = createSuggestedItem(challenge.title, challenge.desc);
+                    suggestedList.appendChild(el);
+                });
+                suggestedModal.classList.remove("hidden");
+            });
+        });
     </script>
+    <div id="challenge-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Crear desafío</h2>
+            <h3 class="form-text">Nombre:</h3>
+            <input id="challenge-name" class="input-form" type="text" placeholder="Nombre del desafío" required/>
+            <h3 class="form-text">Descripción:</h3>
+            <input id="challenge-desc" class="input-form" placeholder="Descripción del desafío" required></input>
+            <div class="modal-buttons">
+                <button id="cancel-button" class="form-button-cancel">Cancelar</button>
+                <button id="save-button" class="form-button">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="suggested-challenges-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Desafíos recomendados</h2>
+            <div id="suggested-challenges-list" class="suggested-list"></div>
+        </div>
+    </div>
 </body>
 </html>
