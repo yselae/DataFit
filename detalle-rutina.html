@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fit - Detalle de Rutina</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main-styles.css">
+    <link rel="stylesheet" href="css/routine-detail-styles.css">
+</head>
+
+<body>
+    <header id="main-header-placeholder"></header>
+
+    <main class="routine-detail-content">
+        
+        <div class="section-header">
+            <a href="rutinas.html" class="back-arrow" aria-label="Volver a la lista de rutinas">
+                <img src="assets/icons/BackArrow.png" alt="Flecha hacia atrás">
+            </a>
+            <h1>Cargando rutina...</h1>
+        </div>
+
+        <div class="exercise-list-container">
+            
+            <div class="list-header">
+                <p class="routine-summary">Cargando detalles...</p>
+                <div class="action-icons">
+                    <button class="action-btn" title="Editar Rutina" aria-label="Editar Rutina">
+                        <i class="fas fa-pencil-alt"></i> </button>
+                    <button class="action-btn" title="Eliminar Rutina" aria-label="Eliminar Rutina">
+                        <i class="fas fa-trash-alt"></i> </button>
+                </div>
+            </div>
+
+            <ul class="exercise-list">
+                </ul>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/routine-manager.js"></script>
+    <script src="js/routine-detail-script.js"></script>
+</body>
+</html>

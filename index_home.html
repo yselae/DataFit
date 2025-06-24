@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/main-styles.css">
+    <link rel="stylesheet" href="css/styles_home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    
+    <header id="main-header-placeholder"></header>
+
+    <main class="home-content">
+
+        <section class="home-section" data-animate="fade-in">
+            <header class="section-header">
+                <h2 class="section-title">RUTINAS</h2>
+                <a href="rutinas.html" class="btn btn--secondary">Ver más rutinas</a>
+            </header>
+
+            <div class="routines-grid">
+                <div class="routine-card">
+                    <img src="assets/img/fondo_lunes.png" alt="Rutina Lunes" class="routine-card__image">
+                    <div class="routine-card__overlay">
+                        <div class="routine-card__info">
+                            <h3 class="routine-card__day">LUNES</h3>
+                            <p class="routine-card__type">Tren Superior</p>
+                        </div>
+                        <a href="detalle-rutina.html" class="btn btn--primary">Ver más</a>
+                    </div>
+                </div>
+
+                <div class="routine-card">
+                    <img src="assets/img/fondo_martes.png" alt="Rutina Martes" class="routine-card__image">
+                    <div class="routine-card__overlay">
+                        <div class="routine-card__info">
+                            <h3 class="routine-card__day">MARTES</h3>
+                            <p class="routine-card__type">Tren Inferior</p>
+                        </div>
+                        <a href="detalle-rutina.html" class="btn btn--primary">Ver más</a>
+                    </div>
+                </div>
+
+                <a href="nueva-rutina.html" class="routine-card routine-card--add">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </section>
+
+        <div class="home-grid-bottom">
+            <section class="home-section" data-animate="fade-in-left">
+                <header class="section-header">
+                    <h2 class="section-title">DESAFÍOS</h2>
+                </header>
+                <div class="challenges-list">
+                    <a href="desafios.html" class="challenge-item">
+                        <span>Completa 3 días</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="desafios.html" class="challenge-item">
+                        <span>Meditación profunda</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="desafios.html" class="challenge-item">
+                        <span>Caminata diaria</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <a href="desafios.html" class="btn btn--secondary challenges-btn-more">Ver más desafíos</a>
+            </section>
+
+            <section class="home-section" data-animate="fade-in-right">
+                <header class="section-header">
+                    <h2 class="section-title">PROGRESO</h2>
+                </header>
+                <div class="progress-card">
+                    <div class="progress-card__circle-container">
+                        <svg class="progress-card__svg" viewBox="0 0 120 120">
+                            <circle class="progress-card__bg" cx="60" cy="60" r="54"></circle>
+                            <circle id="progress-circle-bar" class="progress-card__bar" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                        <div class="progress-card__text">
+                            <span id="progress-number" class="progress-card__number">0</span>
+                            <span class="progress-card__label">días</span>
+                            <span class="progress-card__goal">Objetivo: 60 días</span>
+                        </div>
+                    </div>
+                    <div class="progress-card__info">
+                        <div class="progress-card__objective">
+                            <span class="progress-card__objective-label">OBJETIVO</span>
+                            <p class="progress-card__objective-text">GANAR MASA MUSCULAR</p>
+                        </div>
+                        <a href="progreso.html" class="btn btn--primary">Ver más</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/home-animations.js"></script> 
+</body>
+</html>

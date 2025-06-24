@@ -1,0 +1,119 @@
+/* --- ESTILO BASE --- */
+
+.routine-detail-content {
+    padding: 30px 75px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.exercise-list-container {
+    background-color: #F4F0ED;
+    border-radius: 16px;
+    padding: 25px 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0d9d3;
+    margin-bottom: 10px;
+}
+
+.routine-summary {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.action-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.action-btn img { width: 28px; height: 28px; }
+
+.exercise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #e0d9d3;
+}
+.exercise-item:last-child { border-bottom: none; }
+
+.exercise-name { flex-grow: 1; font-size: 18px; color: #444; }
+.exercise-reps { font-size: 18px; font-weight: 600; color: #333; margin: 0 30px; flex-shrink: 0; }
+.exercise-status img { width: 26px; height: 26px; }
+
+/* --- ESTILOS RESPONSIVE --- */
+
+@media (max-width: 768px) {
+    .routine-detail-content { padding: 20px 15px; }
+    .exercise-list-container { padding: 15px; }
+    .list-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .exercise-item { padding: 15px 5px; }
+    .exercise-name { font-size: 16px; }
+    .exercise-reps { font-size: 16px; margin: 0 15px; }
+}
+
+
+.exercise-item {
+    align-items: flex-start;
+}
+
+.exercise-info {
+    flex-grow: 1;
+}
+
+.exercise-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+}
+
+.exercise-recommendation {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 4px;
+}
+
+.exercise-sets {
+    text-align: right;
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+
+.exercise-series-reps {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2D60ED;
+    display: block;
+}
+
+.exercise-rest {
+    font-size: 14px;
+    color: #666;
+}
+
+.exercise-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

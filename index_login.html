@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Fit - Iniciar Sesión</title>
+  
+  <!-- Google Fonts - DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles_Login.css">
+</head>
+<body class="body_Login">
+
+  <!-- Header con logo -->
+  <header class="header_Login">
+    <div class="logo-container_Login">
+      <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Login">
+      <span class="logo-text_Login">Data Fit</span>
+    </div>
+  </header>
+
+  <!-- Contenedor principal del login -->
+  <div class="login-container_Login" id="loginContainer_Login">
+    
+    <!-- Ícono de éxito (oculto por defecto) -->
+    <div class="success-icon_Login" id="successIcon_Login"></div>
+    
+    <!-- Mensaje de éxito (oculto por defecto) -->
+    <div class="success-message_Login" id="successMessage_Login">
+      ¡Inicio de sesión exitoso!
+    </div>
+    
+    <!-- Títulos -->
+    <h1 class="welcome-title_Login">TE DAMOS LA BIENVENIDA</h1>
+    <p class="login-subtitle_Login">Inicie sesión para continuar</p>
+    
+    <!-- Formulario de login -->
+    <form class="login-form_Login" id="loginForm_Login" novalidate>
+      
+      <!-- Campo Email -->
+      <div class="form-group_Login">
+        <label for="email_Login" class="form-label_Login">Email</label>
+        <input 
+          type="email" 
+          id="email_Login" 
+          name="email" 
+          class="form-input_Login" 
+          placeholder="Ingrese su email"
+          autocomplete="email"
+        >
+      </div>
+      
+      <!-- Campo Contraseña -->
+      <div class="form-group_Login">
+        <label for="password_Login" class="form-label_Login">Contraseña</label>
+        <input 
+          type="password" 
+          id="password_Login" 
+          name="password" 
+          class="form-input_Login" 
+          placeholder="Ingrese su contraseña"
+          autocomplete="current-password"
+        >
+        
+        <!-- Enlace olvidar contraseña -->
+        <div class="forgot-password_Login">
+          <a href="index_Restablecer.html" class="forgot-link_Login">¿Olvidó su contraseña?</a>
+        </div>
+      </div>
+      
+      <!-- Botón Entrar -->
+      <button type="submit" class="login-button_Login">Entrar</button>
+    </form>
+    
+    <!-- Sección de registro -->
+    <div class="register-section_Login">
+      <span class="register-text_Login">¿No tiene cuenta? </span>
+      <a href="index_Registro.html" class="register-link_Login">Regístrese acá</a>
+    </div>
+    
+  </div>
+
+  <!-- Copyright -->
+  <footer class="copyright_Login">
+    © 2025 Data Fit, Inc. - All Rights Reserved
+  </footer>
+
+<script>
+    // Referencias a elementos del DOM
+    const loginForm = document.getElementById('loginForm_Login');
+    const emailInput = document.getElementById('email_Login');
+    const passwordInput = document.getElementById('password_Login');
+    const loginContainer = document.getElementById('loginContainer_Login'); // Contenedor principal
+    const successIcon = document.getElementById('successIcon_Login'); // Ícono de éxito
+    const successMessage = document.getElementById('successMessage_Login'); // Mensaje de éxito
+
+    // Placeholders originales
+    const ORIGINAL_PLACEHOLDERS = {
+      email: 'Ingrese su email',
+      password: 'Ingrese su contraseña'
+    };
+
+    // --- FUNCIONES DE UI ---
+
+    // Función para limpiar los estilos de error de un campo
+    function clearFieldError(input) {
+      input.classList.remove('error_Login');
+      input.placeholder = ORIGINAL_PLACEHOLDERS[input.name];
+    }
+    
+    // Función para mostrar un error en un campo
+    function showFieldError(input, message) {
+      input.classList.add('error_Login');
+      input.value = ''; // Limpiamos el valor para que el placeholder sea visible
+      input.placeholder = message;
+    }
+
+    // Función para manejar el éxito del login
+    function handleLoginSuccess() {
+      // Ocultamos el formulario y mostramos el mensaje de éxito
+      loginForm.style.display = 'none';
+      successIcon.style.display = 'block';
+      successMessage.style.display = 'block';
+      
+      // Añadimos una clase para una posible animación de entrada
+      loginContainer.classList.add('success-state');
+
+      // Esperamos 1.5 segundos antes de redirigir para que el usuario vea el mensaje
+      setTimeout(() => {
+        window.location.href = "index_home.html"; 
+      }, 1500); 
+    }
+
+    // --- LÓGICA PRINCIPAL ---
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevenimos el envío real del formulario
+
+      // Limpiamos errores previos al intentar de nuevo
+      clearFieldError(emailInput);
+      clearFieldError(passwordInput);
+
+      const emailValue = emailInput.value.trim();
+      const passwordValue = passwordInput.value.trim();
+
+      // Validación de campos vacíos
+      if (!emailValue || !passwordValue) {
+        if (!emailValue) {
+          showFieldError(emailInput, 'El email es obligatorio');
+        }
+        if (!passwordValue) {
+          showFieldError(passwordInput, 'La contraseña es obligatoria');
+        }
+        return; 
+      }
+      
+      // Validación de credenciales (SIMULACIÓN)
+      if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
+        console.log('✅ Login exitoso!');
+        handleLoginSuccess();
+      } else {
+        console.error('❌ Credenciales incorrectas');
+        // Mostramos un error genérico para no dar pistas a atacantes
+        showFieldError(emailInput, 'Email o contraseña incorrectos');
+        showFieldError(passwordInput, 'Email o contraseña incorrectos');
+        passwordInput.value = ''; 
+      }
+    });
+
+    emailInput.addEventListener('input', () => clearFieldError(emailInput));
+    passwordInput.addEventListener('input', () => clearFieldError(passwordInput));
+  </script>
+
+</body>
+</html>
+
