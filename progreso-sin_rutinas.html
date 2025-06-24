@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="css\styles-pro_sint.css" />
+    <title>Data Fit - Mi Progreso</title>
+  </head>
+  <body>
+    <div class="progreso-sin">
+      <header class="header">
+        <img
+          class="logo"
+          src="logo.png"
+          alt="Logo de Data Fit"
+        />
+        <h1 class="app-name">Data Fit</h1>
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <a href="#" class="nav-link nav-link-inicio"
+                ><img
+                  class="icon-home"
+                  src="home.png"
+                  alt="Icono de inicio"
+                />
+                INICIO</a
+              >
+            </li>
+            <li><a href="#" class="nav-link">RUTINAS</a></li>
+            <li><a href="#" class="nav-link">DESAFÍOS</a></li>
+            <li><a href="#" class="nav-link nav-link-active">PROGRESO</a></li>
+          </ul>
+        </nav>
+        <div class="user-actions">
+          <button class="notification-btn" aria-label="Notificaciones">
+            <img src="notification.png" alt="Icono de notificación" />
+            <span class="notification-indicator"></span>
+          </button>
+          <button class="settings-btn" aria-label="Configuración">
+            <img src="settings.png" alt="Icono de configuración" />
+          </button>
+        </div>
+      </header>
+      <main class="main-content">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <a href="#" class="back-link">
+            <img src="assets\arrow_back.svg" alt="Flecha de retroceso" />
+          </a>
+          <h2 class="page-title">MI PROGRESO</h2>
+        </nav>
+        <div class="error-modal">
+          <img class="error-icon" src="assets\error.png" alt="Icono de error" />
+          <p class="error-message">No cuenta con rutinas activas, no se puede generar su progreso</p>
+          <button class="btn-get-started">volver</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
