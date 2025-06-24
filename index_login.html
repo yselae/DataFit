@@ -134,7 +134,7 @@
 
       // Esperamos 1.5 segundos antes de redirigir para que el usuario vea el mensaje
       setTimeout(() => {
-        window.location.href = "index_home.html"; // ¡Asegúrate que esta ruta es correcta!
+        window.location.href = "index_home.html"; 
       }, 1500); 
     }
 
@@ -158,7 +158,7 @@
         if (!passwordValue) {
           showFieldError(passwordInput, 'La contraseña es obligatoria');
         }
-        return; // Detenemos la función aquí
+        return; 
       }
       
       // Validación de credenciales (SIMULACIÓN)
@@ -170,11 +170,10 @@
         // Mostramos un error genérico para no dar pistas a atacantes
         showFieldError(emailInput, 'Email o contraseña incorrectos');
         showFieldError(passwordInput, 'Email o contraseña incorrectos');
-        passwordInput.value = ''; // Por seguridad, siempre borramos la contraseña incorrecta
+        passwordInput.value = ''; 
       }
     });
 
-    // Limpiar errores al empezar a escribir (esto ya lo tenías y es una excelente idea)
     emailInput.addEventListener('input', () => clearFieldError(emailInput));
     passwordInput.addEventListener('input', () => clearFieldError(passwordInput));
   </script>
