@@ -8,31 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
+    <link rel="stylesheet" href="css/main-styles.css">
     <link rel="stylesheet" href="css/desafios-style.css">
 </head>
 <body>
 
-    <nav class="nav-bar_Home">
-        <div class="logo_Home">
-            <a href="index_home.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                <img src="assets/icons/logo-datafit.png" alt="Logo Data Fit" class="logo-icon_Home">
-                <span class="logo-text_Home">Data Fit</span>
-            </a>
-        </div>
+<body class="home_Home">
     
-        <ul class="menu_Home">
-            <li><a href="index_home.html" class="nav-link_Home"><i class="fas fa-home icon-nav_Home"></i> INICIO</a></li>
-            <li><a href="rutinas.html" class="nav-link_Home"><i class="fas fa-dumbbell icon-nav_Home"></i> RUTINAS</a></li>
-            <li><a href="desafios.html" class="nav-link_Home active_Home"><i class="fas fa-trophy icon-nav_Home"></i> DESAFÍOS</a></li>
-            <li><a href="progreso.html" class="nav-link_Home"><i class="fas fa-chart-line icon-nav_Home"></i> PROGRESO</a></li>
-        </ul>
-    
-        <div class="actions_Home">
-            <a href="notificaciones.html" title="Notificaciones"><i class="fas fa-bell notification-icon_Home"></i></a>
-            <a href="configuracion.html" title="Configuración"><i class="fas fa-cog settings-icon_Home"></i></a>
-        </div>
-    </nav>
+    <header id="main-header-placeholder"></header>
+
+    <main class="main-content_Home">
+        </main>
+
+    </body>
 
     <div class="main-bar">
         <div class="main-group">
@@ -290,25 +278,6 @@
             });
         });
     </script>
-    <div id="challenge-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2 class="modal-title">Crear desafío</h2>
-            <h3 class="form-text">Nombre:</h3>
-            <input id="challenge-name" class="input-form" type="text" placeholder="Nombre del desafío" required/>
-            <h3 class="form-text">Descripción:</h3>
-            <input id="challenge-desc" class="input-form" placeholder="Descripción del desafío" required></input>
-            <div class="modal-buttons">
-                <button id="cancel-button" class="form-button-cancel">Cancelar</button>
-                <button id="save-button" class="form-button">Guardar</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="suggested-challenges-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2 class="modal-title">Desafíos recomendados</h2>
-            <div id="suggested-challenges-list" class="suggested-list"></div>
-        </div>
-    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

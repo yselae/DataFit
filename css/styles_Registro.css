@@ -357,7 +357,6 @@
   animation: fadeIn_Login 0.5s ease-out;
 }
 
-/* Mostrar mensaje cuando tenga clase 'show' */
 .success-message_Restablecer.show_Restablecer {
   display: block;
 }
