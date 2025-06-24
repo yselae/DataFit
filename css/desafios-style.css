@@ -314,3 +314,173 @@ body {
 .delete-icon{
     cursor: pointer;
 }
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2D60FF;
+    padding: 20px;
+    height: 393px;
+    width: 519px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form-button{
+    width: 120px;
+    height: 40px;
+    background-color: #00D100;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-button-cancel{
+    width: 120px;
+    height: 40px;
+    background-color: #68D968;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal-title{
+    font-weight: 600;
+    font-size: 28px;
+    color: white;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.input-form{
+    width: 440px;
+    height: 60px;
+    border-style: none;
+    border-radius: 40px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 20px;
+    resize: none;
+}
+
+.input-form:focus{
+    outline: none;
+}
+
+.input-form::placeholder{
+    color: transparent;
+}
+
+.form-text{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 15px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.suggested {
+    position: absolute;
+    top: 130px;
+    left: 630px;
+    width: 432px;
+    height: auto;
+    display: flex;
+    background-color: #D7EDFF;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.hidden{
+    display: none;
+}
+
+.suggested-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.suggested-item {
+    background: #f0f0f0;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggested-info {
+    flex: 1;
+}
+
+.suggested-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.suggested-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+.suggested-actions{
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.suggested-actions button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reject-btn {
+    background-color: #F44336;
+    color: white;
+}
