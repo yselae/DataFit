@@ -7,46 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>       
-        document.addEventListener("DOMContentLoaded", function () {
-            var modal = document.getElementById("challenge-modal");
-            var nameInput = document.getElementById("challenge-name");
-            var descInput = document.getElementById("challenge-desc");
-            var cancelBtn = document.getElementById("cancel-button");
-            var saveBtn = document.getElementById("save-button");
-            var createBtn = document.querySelector(".create-challenge-button");
-            var activeContainer = document.querySelector(".challenges-container-actives");
-            function clearModal() {
-                nameInput.value = "";
-                descInput.value = "";
-            }
-            function createChallengeCard(name, desc) {
-                var card = document.createElement("div");
-                card.className = "challenge-card";
-                card.innerHTML = "\n      <div class=\"challenge-header\">\n          <p class=\"challenge-text\">".concat(name, "</p>\n          <div class=\"challenge-options\">\n              <img src=\"/assets/unstar.svg\" class=\"favorite-toggle-icon\" data-favorite=\"false\"/>\n              <img src=\"/assets/edit.svg\"/>\n              <img src=\"/assets/trash.svg\" class=\"delete-icon\"/>\n          </div>\n      </div>\n      <div class=\"challenge-body\">\n          <p>").concat(desc, "</p>\n      </div>\n      <button class=\"challenge-button\">marcar como completado</button>\n    ");
-                return card;
-            }
-            createBtn.addEventListener("click", function () {
-                modal.classList.remove("hidden");
-            });
-            cancelBtn.addEventListener("click", function () {
-                modal.classList.add("hidden");
-                clearModal();
-            });
-            saveBtn.addEventListener("click", function () {
-                var name = nameInput.value.trim();
-                var desc = descInput.value.trim();
-                if (!name || !desc) {
-                    alert("Por favor, completa ambos campos.");
-                    return;
-                }
-                var newCard = createChallengeCard(name, desc);
-                activeContainer.appendChild(newCard);
-                modal.classList.add("hidden");
-                clearModal();
-            });
-        });
-
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             var favoriteContainer = document.querySelector(".challenges-container");
             var activeContainer = document.querySelector(".challenges-container-actives");
@@ -191,19 +152,6 @@
                     </div>
                     <button class="challenge-button">marcar como completado</button>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div id="challenge-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2 class="modal-title">Crear desafío</h2>
-            <h3 class="form-text">Nombre:</h3>
-            <input id="challenge-name" class="input-form" type="text" placeholder="Nombre del desafío" required/>
-            <h3 class="form-text">Descripción:</h3>
-            <input id="challenge-desc" class="input-form" placeholder="Descripción del desafío" required></input>
-            <div class="modal-buttons">
-                <button id="cancel-button" class="form-button-cancel">Cancelar</button>
-                <button id="save-button" class="form-button">Guardar</button>
             </div>
         </div>
     </div>
