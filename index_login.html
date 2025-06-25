@@ -92,17 +92,14 @@
     © 2025 Data Fit, Inc. - All Rights Reserved
   </footer>
 
-  <script>
+<script>
     // Referencias a elementos del DOM
     const loginForm = document.getElementById('loginForm_Login');
     const emailInput = document.getElementById('email_Login');
     const passwordInput = document.getElementById('password_Login');
-
-    // Estados de error posibles
-    const ERROR_STATES = {
-      EMPTY_FIELDS: 'empty_fields',
-      INVALID_CREDENTIALS: 'invalid_credentials'
-    };
+    const loginContainer = document.getElementById('loginContainer_Login'); // Contenedor principal
+    const successIcon = document.getElementById('successIcon_Login'); // Ícono de éxito
+    const successMessage = document.getElementById('successMessage_Login'); // Mensaje de éxito
 
     // Placeholders originales
     const ORIGINAL_PLACEHOLDERS = {
@@ -110,77 +107,75 @@
       password: 'Ingrese su contraseña'
     };
 
-    // Mensajes de error
-    const ERROR_MESSAGES = {
-      email: 'Email obligatorio',
-      password: 'Contraseña obligatoria'
-    };
+    // --- FUNCIONES DE UI ---
 
-    // Función para limpiar estados previos
-    function clearErrorStates() {
-      emailInput.classList.remove('error_Login');
-      passwordInput.classList.remove('error_Login');
-      emailInput.placeholder = ORIGINAL_PLACEHOLDERS.email;
-      passwordInput.placeholder = ORIGINAL_PLACEHOLDERS.password;
-      emailInput.value = '';
-      passwordInput.value = '';
+    // Función para limpiar los estilos de error de un campo
+    function clearFieldError(input) {
+      input.classList.remove('error_Login');
+      input.placeholder = ORIGINAL_PLACEHOLDERS[input.name];
     }
-
-    // Función para mostrar error en un campo
-    function showFieldError(field, errorType) {
-      const input = field === 'email' ? emailInput : passwordInput;
+    
+    // Función para mostrar un error en un campo
+    function showFieldError(input, message) {
       input.classList.add('error_Login');
-      input.value = '';
-      input.placeholder = ERROR_MESSAGES[field];
+      input.value = ''; // Limpiamos el valor para que el placeholder sea visible
+      input.placeholder = message;
     }
 
-    // Simular login
-    function simulateLogin() {
+    // Función para manejar el éxito del login
+    function handleLoginSuccess() {
+      // Ocultamos el formulario y mostramos el mensaje de éxito
+      loginForm.style.display = 'none';
+      successIcon.style.display = 'block';
+      successMessage.style.display = 'block';
+      
+      // Añadimos una clase para una posible animación de entrada
+      loginContainer.classList.add('success-state');
+
+      // Esperamos 1.5 segundos antes de redirigir para que el usuario vea el mensaje
+      setTimeout(() => {
+        window.location.href = "index_home.html"; 
+      }, 1500); 
+    }
+
+    // --- LÓGICA PRINCIPAL ---
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevenimos el envío real del formulario
+
+      // Limpiamos errores previos al intentar de nuevo
+      clearFieldError(emailInput);
+      clearFieldError(passwordInput);
+
       const emailValue = emailInput.value.trim();
       const passwordValue = passwordInput.value.trim();
 
-      if (!emailValue && !passwordValue) {
-        showFieldError('email', 'empty');
-        showFieldError('password', 'empty');
-        return ERROR_STATES.EMPTY_FIELDS;
-      } else if (!emailValue) {
-        showFieldError('email', 'empty');
-        return ERROR_STATES.EMPTY_FIELDS;
-      } else if (!passwordValue) {
-        showFieldError('password', 'empty');
-        return ERROR_STATES.EMPTY_FIELDS;
-      } else if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
+      // Validación de campos vacíos
+      if (!emailValue || !passwordValue) {
+        if (!emailValue) {
+          showFieldError(emailInput, 'El email es obligatorio');
+        }
+        if (!passwordValue) {
+          showFieldError(passwordInput, 'La contraseña es obligatoria');
+        }
+        return; 
+      }
+      
+      // Validación de credenciales (SIMULACIÓN)
+      if (emailValue === 'admin@datafit.com' && passwordValue === '123456') {
         console.log('✅ Login exitoso!');
-        window.location.href = "index_home.html";
-        return 'SUCCESS';
+        handleLoginSuccess();
       } else {
-        showFieldError('email', 'invalid');
-        showFieldError('password', 'invalid');
-        return ERROR_STATES.INVALID_CREDENTIALS;
-      }
-    }
-
-    // Manejador de submit
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      clearErrorStates();
-      simulateLogin();
-    });
-
-    // Limpiar errores al escribir
-    emailInput.addEventListener('input', function() {
-      if (this.classList.contains('error_Login')) {
-        this.classList.remove('error_Login');
-        this.placeholder = ORIGINAL_PLACEHOLDERS.email;
+        console.error('❌ Credenciales incorrectas');
+        // Mostramos un error genérico para no dar pistas a atacantes
+        showFieldError(emailInput, 'Email o contraseña incorrectos');
+        showFieldError(passwordInput, 'Email o contraseña incorrectos');
+        passwordInput.value = ''; 
       }
     });
 
-    passwordInput.addEventListener('input', function() {
-      if (this.classList.contains('error_Login')) {
-        this.classList.remove('error_Login');
-        this.placeholder = ORIGINAL_PLACEHOLDERS.password;
-      }
-    });
+    emailInput.addEventListener('input', () => clearFieldError(emailInput));
+    passwordInput.addEventListener('input', () => clearFieldError(passwordInput));
   </script>
 
 </body>

@@ -45,11 +45,11 @@ body.landing-page {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px; /* Espacio entre la imagen y el texto */
+    gap: 12px; 
 }
 
 .logo-img {
-    height: 40px; /* Ajusta el tamaño de tu logo aquí */
+    height: 40px;
 }
 
 .landing-header .logo-text {
@@ -97,7 +97,6 @@ body.landing-page {
 }
 
 /* --- Hero Section (SOLO ESTILOS GENERALES) --- */
-/* La imagen de fondo fue MOVIDA al index.html */
 #hero {
     background-size: cover;
     background-position: center;
