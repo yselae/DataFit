@@ -1,0 +1,289 @@
+/* === ESTILOS COMPARTIDOS === */
+.progress-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 4%;
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+}
+
+.progress-column-left {
+    flex: 1;
+    min-width: 320px;
+}
+
+.progress-column-right {
+    flex: 2;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* === CABECERA DE PÁGINA Y SECCIÓN === */
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #2D60FF;
+    font-weight: 800;
+}
+
+.page-header .back-arrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2D60FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-header .back-arrow img {
+    width: 24px;
+    height: 24px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.section-header .section-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+}
+
+
+/* === COLUMNA IZQUIERDA: ANILLO DE PROGRESO E HISTORIAL === */
+.progress-ring-container {
+    position: relative;
+    width: 160px; 
+    height: 160px; 
+    margin: 0 auto;
+}
+
+.progress-ring__svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+.progress-ring__bg, .progress-ring__bar {
+    fill: none;
+    stroke-width: 12; 
+}
+.progress-ring__bg {
+    stroke: #e0e0e0; 
+}
+.progress-ring__bar {
+    stroke: #00D100;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+.progress-ring__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.1;
+}
+.progress-ring__text .days {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    color: #333;
+    display: block;
+}
+.progress-ring__text .label { display: none; }
+.progress-ring__text .goal {
+    font-size: 0.8rem; 
+    color: #777;
+    display: block; 
+    margin-top: 0.2rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+    margin-top: 1rem;
+}
+
+.history-item {
+    background-color: #fff;
+    border-radius: 8px; 
+    padding: 0.75rem 1rem; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+}
+
+.history-item strong {
+    display: block;
+    font-size: 0.9rem; 
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+.history-item p {
+    font-size: 0.8rem; 
+    color: #777;
+}
+
+/* === COLUMNA DERECHA: OBJETIVO Y ESTADÍSTICAS === */
+.objective-card {
+    background-color: #2D60FF;
+    border-radius: 8px; 
+    padding: 0.75rem 1rem; 
+    text-align: center;
+    color: white;
+    font-size: 1rem; 
+    font-weight: 700;
+}
+
+.stats-card {
+    background-color: #fff;
+    border-radius: 12px; 
+    padding: 1rem; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stats-title {
+    font-size: 1.2rem; 
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.stats-bars-container, .comparison-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+    margin-top: 0.5rem;
+}
+.stat-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto; 
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem; 
+}
+.stat-label { font-weight: 600; }
+.stat-completion { text-align: right; color: #888; }
+.stat-bar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 8px; 
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.stat-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+.stat-bar--dark { background-color: #2364f3; z-index: 2; }
+.stat-bar--light { background-color: #4a90e2; z-index: 1; }
+
+.comparison-chart {
+    flex-direction: column; 
+    align-items: stretch; 
+    height: auto; 
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin-top: 1rem;
+}
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+.chart-column {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    width: 100%;
+    height: 20px; 
+    background-color: #f0f0f0; 
+    border-radius: 4px;
+    overflow: hidden;
+}
+.chart-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease-out; 
+}
+.chart-bar--dark { background-color: #2364f3; width: 60%; }
+.chart-bar--light { background-color: #4a90e2; width: 80%;  }
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+}
+.color-box {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.color-box--dark { background-color: #2364f3; }
+.color-box--light { background-color: #4a90e2; }
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 992px) {
+    .progress-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-container {
+        padding: 1rem;
+    }
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    .section-header h2, .stats-title {
+        font-size: 1.1rem;
+    }
+    .stat-item {
+        grid-template-columns: 70px 1fr auto;
+        font-size: 0.75rem;
+    }
+    .progress-column-right {
+        gap: 1rem;
+    }
+    .objective-card p {
+        font-size: 0.9rem;
+    }
+}

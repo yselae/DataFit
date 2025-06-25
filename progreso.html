@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main-styles.css"> <link rel="stylesheet" href="css/progreso-styles.css"> </head>
+
+<body>
+    <header id="main-header-placeholder"></header>
+
+    <main class="progress-container">
+        <div class="progress-column-left">
+            <div class="page-header">
+                <a href="index_home.html" class="back-arrow" aria-label="Volver a Inicio">
+                    <img src="assets/icons/arrowRetro.png" alt="Volver">
+                    <span>Volver</span>
+                </a>
+                <h1>MI PROGRESO</h1>
+            </div>
+
+            <div class="progress-ring-container">
+                <svg class="progress-ring__svg" viewBox="0 0 120 120">
+                    <circle class="progress-ring__bg" cx="60" cy="60" r="54"></circle>
+                    <circle id="progress-ring-bar" class="progress-ring__bar" cx="60" cy="60" r="54" style="stroke-dashoffset: 339.292;"></circle>
+                </svg>
+                <div class="progress-ring__text">
+                    <span id="progress-days" class="days">40</span>
+                    <span class="label">días</span>
+                    <span class="goal">Objetivo: 60 días</span>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <img class="section-icon" src="assets/icons/Historial.png" alt="Historial">
+                <h2>Mi Historial</h2>
+            </div>
+
+            <div id="history-list" class="history-list">
+                </div>
+        </div>
+
+        <div class="progress-column-right">
+            <div class="objective-card">
+                <p>OBJETIVO: GANAR GRASA MUSCULAR</p>
+            </div>
+
+            <div class="stats-card">
+                <h2 class="stats-title">Estadísticas</h2>
+                <div class="stats-bars-container">
+                    <div class="stat-item">
+                        <span class="stat-label">Rutina 1</span>
+                        <div class="stat-bar-wrapper">
+                            <div class="stat-bar stat-bar--dark" style="width: 45%;"></div>
+                            <div class="stat-bar stat-bar--light" style="width: 90%;"></div>
+                        </div>
+                        <span class="stat-completion">9 de 20 completados</span>
+                    </div>
+                     </div>
+
+                <h2 class="stats-title">Comparación entre semanas</h2>
+                <div class="comparison-chart">
+                    <div class="chart-item">
+                        <span>Rutina 1</span>
+                        <div class="chart-column">
+                            <div class="chart-bar chart-bar--dark" style="height: 70%;"></div>
+                            <div class="chart-bar chart-bar--light" style="height: 50%;"></div>
+                        </div>
+                    </div>
+                     </div>
+                <div class="legend">
+                    <div><span class="color-box color-box--dark"></span> Semana 1</div>
+                    <div><span class="color-box color-box--light"></span> Semana 2</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/routine-manager.js"></script>
+    <script src="js/progreso-script.js"></script>
+</body>
+</html>
